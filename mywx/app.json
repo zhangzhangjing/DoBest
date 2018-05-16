@@ -1,22 +1,42 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/person/person",
+    "pages/recommend/recommend",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "薄荷凉凉凉",
+    "navigationBarTitleText": "爱彼迎的家",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
+    "color": "#333",
+    "selectedColor": "#d81e06",
     "list": [{
+      "selectedIconPath": "images/homese.png",
+      "iconPath": "images/home.png",
       "pagePath": "pages/index/index",
       "text": "首页"
-    }, {
+    },{
+      "selectedIconPath": "images/tuijianse.png",
+      "iconPath": "images/tuijian.png",
+      "pagePath":"pages/recommend/recommend",
+      "text":"推荐"
+    },
+    {
+      "selectedIconPath": "images/shequse.png",
+      "iconPath": "images/shequ.png",
       "pagePath": "pages/logs/logs",
-      "text": "日志"
-    }]
+      "text": "社区"
+    },
+      {
+        "selectedIconPath": "/images/wose.png",
+        "iconPath": "images/wo.png",
+        "pagePath": "pages/person/person",
+        "text": "我"
+      }]
   },
   "networkTimeout": {
     "request": 10000,

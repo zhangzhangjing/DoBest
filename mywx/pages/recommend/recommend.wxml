@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="flex-row" style="display: flex;flex-direction: row;">
+    <button type="primary" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+            disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 推荐 </button>
+    <button type="default" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+            disabled="{{disabled}}" bindtap="primary"> 优惠活动 </button>
+    <button type="default" size="{{warnSize}}" loading="{{loading}}" plain="{{plain}}"
+            disabled="{{disabled}}" bindtap="warn"> 最近热门 </button>
+</view>
+<view class="container">
+
+
+</view>
+

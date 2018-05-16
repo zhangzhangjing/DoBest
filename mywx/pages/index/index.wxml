@@ -1,17 +1,61 @@
 <!--index.wxml-->
+<swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="100%"/>
+          </swiper-item>
+        </block>
+</swiper>
+<view class="icons">
+    <view class="flex-row" style="display: flex;flex-direction: row;">
+                <view class="flex-view-item btnitem">
+                    <image src="../../images/home.png" class="iconbtn"/>
+                    电影
+                </view>
+                <view class="flex-view-item btnitem">
+                 <image src="../../images/home.png"  class="iconbtn"/>
+                    咖啡
+                </view>
+                <view class="flex-view-item btnitem">
+                 <image src="../../images/home.png"  class="iconbtn"/>
+                    桌游
+                </view>
+                <view class="flex-view-item btnitem">
+                 <image src="../../images/home.png"  class="iconbtn"/>
+                    KTV
+                </view>
+                 </view>
+                 <view class="flex-row" style="display: flex;flex-direction: row;">
+                     <view class="flex-view-item btnitem">
+                         <image src="../../images/home.png" class="iconbtn"/>
+                         电影
+                     </view>
+                     <view class="flex-view-item btnitem">
+                      <image src="../../images/home.png"  class="iconbtn"/>
+                         咖啡
+                     </view>
+                     <view class="flex-view-item btnitem">
+                      <image src="../../images/home.png"  class="iconbtn"/>
+                         桌游
+                     </view>
+                     <view class="flex-view-item btnitem">
+                      <image src="../../images/home.png"  class="iconbtn"/>
+                         KTV
+                     </view>
+                      </view>
+</view>
 <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-    <button bindtap="getPicture">点击获取我的相册</button>
-    <view  wx:for="{{pictures}}" wx:for-index="index" wx:for-item="item">
-        <image class="image_frame" src="{{ item }}"  mode="aspectFill"></image>
-    </view>
-  </view>
 </view>
+<view>
+
+</view>
+
+
+
+

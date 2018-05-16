@@ -23,3 +23,29 @@
 .usermotto {
   margin-top: 200px;
 }
+.slide-image{
+    width:100%;
+    margin-bottom:1rpx;
+    height:330rpx;
+}
+.icons{
+width:100%;
+height:300rpx;
+margin-top:10px;
+background:#fff;
+}
+.btnitem:first-child{
+margin-left:0%;
+}
+.btnitem{
+    width:20%;
+    margin-left:6%;
+    margin-top:10rpx;
+   background:#444;
+   height:130rpx;
+   border-radius:5rpx;
+}
+.iconbtn{
+    width:50rpx;
+    height:50rpx;
+}
