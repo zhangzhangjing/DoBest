@@ -17,7 +17,8 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    // isScroll:false
   },
   //事件处理函数
   bindViewTap: function() {

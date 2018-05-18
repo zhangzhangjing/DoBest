@@ -1,0 +1,13 @@
+.flex-item{
+  width: 100%;
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+.user-icon{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-left: 10px;
+}

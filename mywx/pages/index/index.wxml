@@ -1,5 +1,6 @@
 <!--index.wxml-->
-<swiper indicator-dots="{{indicatorDots}}"
+<scroll-view>
+  <swiper indicator-dots="{{indicatorDots}}"
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
         <block wx:for="{{imgUrls}}">
           <swiper-item>
@@ -9,41 +10,47 @@
 </swiper>
 <view class="icons">
     <view class="flex-row" style="display: flex;flex-direction: row;">
-                <view class="flex-view-item btnitem">
-                    <image src="../../images/home.png" class="iconbtn"/>
-                    <text>电影</text>
-                </view>
-                <view class="flex-view-item btnitem">
-                 <image src="../../images/home.png"  class="iconbtn"/>
-                    咖啡
-                </view>
-                <view class="flex-view-item btnitem">
-                 <image src="../../images/home.png"  class="iconbtn"/>
-                    桌游
-                </view>
-                <view class="flex-view-item btnitem">
-                 <image src="../../images/home.png"  class="iconbtn"/>
-                    KTV
-                </view>
-                 </view>
-                 <view class="flex-row" style="display: flex;flex-direction: row;">
-                     <view class="flex-view-item btnitem">
-                         <image src="../../images/home.png" class="iconbtn"/>
-                         电影
-                     </view>
-                     <view class="flex-view-item btnitem">
-                      <image src="../../images/home.png"  class="iconbtn"/>
-                         咖啡
-                     </view>
-                     <view class="flex-view-item btnitem">
-                      <image src="../../images/home.png"  class="iconbtn"/>
-                         桌游
-                     </view>
-                     <view class="flex-view-item btnitem">
-                      <image src="../../images/home.png"  class="iconbtn"/>
-                         KTV
-                     </view>
-                      </view>
+      <view class="flex-view-item btnitem bg_blue">
+          <image src="../../images/icons/iconn1.png" class="iconbtn"/>
+      </view>
+      <view class="flex-view-item btnitem bg_pink">
+        <image src="../../images/icons/iconn2.png"  class="iconbtn"/> 
+      </view>
+      <view class="flex-view-item btnitem bg_red">
+        <image src="../../images/icons/iconn3.png"  class="iconbtn"/>
+          
+      </view>
+      <view class="flex-view-item btnitem bg_yelow">
+        <image src="../../images/icons/iconn4.png"  class="iconbtn"/>
+          
+      </view>
+        </view>
+        <view class="flex-row" style="display: flex;flex-direction: row;">
+            <view class="flex-view-item btnitem  bg_dark">
+                <image src="../../images/icons/iconn5.png" class="iconbtn"/>  
+            </view>
+            <view class="flex-view-item btnitem bg_ceity">
+            <image src="../../images/icons/iconn6.png"  class="iconbtn"/>
+              
+            </view>
+            <view class="flex-view-item btnitem bg_yellow">
+            <image src="../../images/icons/iconn7.png"  class="iconbtn"/>
+              
+            </view>
+            <view class="flex-view-item btnitem bg_green">
+            <image src="../../images/icons/iconn8.png"  class="iconbtn"/>
+            </view>
+        </view>
+</view>
+<view class='two_block'>
+  <view class='flex-row'  style="display: flex;flex-direction: row;">
+    <view class='index-flex' style='border-right:1px solid #eee;'>
+      <image src="../../images/indexpic1.png" class='index-pic'/>
+    </view>
+    <view class='index-flex'>
+      <image src="../../images/indexpic2.png"  class='index-pic'/>
+    </view>
+  </view>
 </view>
 <view class="container">
   <view class="userinfo">
@@ -55,6 +62,8 @@
 <view>
 
 </view>
+</scroll-view>
+
 
 
 
