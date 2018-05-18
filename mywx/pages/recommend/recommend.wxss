@@ -23,3 +23,52 @@
 .usermotto {
   margin-top: 200px;
 }
+.flex-btn-item{
+  width: 230rpx;
+  height: 80rpx;
+  background: #fff;
+  margin-left: 18rpx;
+  margin-top: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #333;
+}
+.select-btn{
+  margin-left: 18rpx;
+  margin-top: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  width: 230rpx;
+  height: 80rpx;
+  background: #f3d5cd;
+  color: red;
+}
+.pic-item1,.pic-item2,.pic-item3{
+  position:relative;
+  margin-left: 18rpx;
+  margin-top: 18rpx;
+  background: #fff;
+}
+.pic-item1,.pic-item1 image{
+  width: 260rpx;
+  height: 350rpx;
+}
+.pic-item2,.pic-item2 image{
+  width: 443rpx;
+  height: 350rpx;
+}
+.pic-item3,.pic-item3 image{
+  width: 351rpx;
+  height: 400rpx;
+}
+.text-item{
+  position: absolute;
+  width: 100%;
+  height: 50rpx;
+  background: rgba(255,255,255,0.5);
+  color: #000;
+  text-align: center;
+  line-height: 50rpx;
+  bottom: 0;
+  font-size: 28rpx;
+}

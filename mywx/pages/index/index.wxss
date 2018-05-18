@@ -1,4 +1,7 @@
 /**index.wxss**/
+scroll-view{
+  height: 100%;
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -23,29 +26,75 @@
 .usermotto {
   margin-top: 200px;
 }
+swiper{
+  height:380rpx;
+}
 .slide-image{
     width:100%;
     margin-bottom:1rpx;
-    height:330rpx;
+    height:380rpx;
 }
 .icons{
 width:100%;
 height:300rpx;
-margin-top:10px;
 background:#fff;
+ margin-top: 15rpx;
 }
-.btnitem:first-child{
-margin-left:0%;
-}
+
 .btnitem{
-    width:20%;
-    margin-left:6%;
-    margin-top:10rpx;
+    width:120rpx;
+    margin-left:55rpx;
+    margin-top:3%;
    background:#444;
-   height:130rpx;
-   border-radius:5rpx;
+   height:120rpx;
+   border-radius:18rpx;
+   color: #fff;
+   text-align: center;
 }
 .iconbtn{
-    width:50rpx;
-    height:50rpx;
+    width:90rpx;
+    height:90rpx;
+    margin-top: 15rpx
+    
+}
+.bg_blue{
+  background:#f84b23;
+}
+.bg_pink{
+  background:#74f22f;
+}
+.bg_red{
+  background:rgb(240,97,211);
+}
+.bg_yelow{
+  background:rgb(12,191,89);
+}
+.bg_dark{
+ background:rgb(31,245,121);
+}
+.bg_pinke{
+  background:rgb(31,245,121);
+}
+.bg_ceity{
+  background:rgb(159,204,39);
+}
+.bg_yellow{
+  background:rgb(244,202,32);
+}
+.bg_green{
+  background:rgb(115,240,48);
+}
+.two_block{
+  background: #fff;
+  width: 100%;
+  margin-top: 15rpx;
+}
+.index-flex{
+  width: 50%;
+}
+.index-pic{
+  width: 300rpx;
+  height: 160rpx;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
 }

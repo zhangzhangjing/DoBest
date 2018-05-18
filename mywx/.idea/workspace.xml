@@ -67,8 +67,13 @@
       <file leaf-file-name="person.wxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/person/person.wxml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="539">
+              <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+=======
             <state relative-caret-position="540">
               <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+>>>>>>> 351a4a1005dc788fb198a26910060e3c7af35aa2
             </state>
           </provider>
         </entry>
@@ -107,14 +112,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/pages/index/index.js" />
+=======
         <option value="$PROJECT_DIR$/pages/person/person.wxml" />
+>>>>>>> 351a4a1005dc788fb198a26910060e3c7af35aa2
         <option value="$PROJECT_DIR$/app.json" />
         <option value="$PROJECT_DIR$/pages/index/index.wxss" />
         <option value="$PROJECT_DIR$/pages/recommend/recommend.wxml" />
         <option value="$PROJECT_DIR$/app.wxss" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/pages/person/person.wxml" />
+=======
         <option value="$PROJECT_DIR$/pages/logs/logs.wxml" />
         <option value="$PROJECT_DIR$/pages/index/index.js" />
         <option value="$PROJECT_DIR$/pages/index/index.wxml" />
+>>>>>>> 351a4a1005dc788fb198a26910060e3c7af35aa2
       </list>
     </option>
   </component>
@@ -212,13 +225,29 @@
       <updated>1526375437945</updated>
       <workItem from="1526375439118" duration="3431000" />
       <workItem from="1526434957933" duration="5957000" />
+<<<<<<< HEAD
+      <workItem from="1526457272691" duration="7134000" />
+=======
       <workItem from="1526457272691" duration="6734000" />
+<<<<<<< HEAD
       <workItem from="1526476717568" duration="2111000" />
+=======
+      <workItem from="1526476717568" duration="1783000" />
+>>>>>>> 351a4a1005dc788fb198a26910060e3c7af35aa2
+>>>>>>> a5c01d77765e9831ccfb59747584ce259db95cbd
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="18233000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="16522000" />
+=======
+    <option name="totallyTimeSpent" value="17905000" />
+>>>>>>> 351a4a1005dc788fb198a26910060e3c7af35aa2
+>>>>>>> a5c01d77765e9831ccfb59747584ce259db95cbd
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -434,8 +463,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/index/index.wxml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="271">
           <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="539">
+          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+=======
+        <state relative-caret-position="421">
+          <caret line="49" column="84" selection-start-line="49" selection-start-column="84" selection-end-line="49" selection-end-column="84" />
+>>>>>>> 351a4a1005dc788fb198a26910060e3c7af35aa2
+>>>>>>> a5c01d77765e9831ccfb59747584ce259db95cbd
         </state>
       </provider>
     </entry>

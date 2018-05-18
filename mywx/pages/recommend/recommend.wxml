@@ -1,14 +1,14 @@
 <!--index.wxml-->
 <view class="flex-row" style="display: flex;flex-direction: row;">
-    <button type="primary" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-            disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 推荐 </button>
-    <button type="default" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
-            disabled="{{disabled}}" bindtap="primary"> 优惠活动 </button>
-    <button type="default" size="{{warnSize}}" loading="{{loading}}" plain="{{plain}}"
-            disabled="{{disabled}}" bindtap="warn"> 最近热门 </button>
+    <view class="{{_num == 1?'select-btn':'flex-btn-item'}}" data-num = "1" bindtap="clickBtn">推荐</view>
+    <view class="{{_num == 2?'select-btn':'flex-btn-item'}}" data-num = "2" bindtap="clickBtn">优惠活动</view>
+    <view class="{{_num == 3?'select-btn':'flex-btn-item'}}" data-num = "3" bindtap="clickBtn">最近热门</view>
 </view>
-<view class="container">
 
-
+<view style="display:flex;flex-wrap: wrap-reverse;">
+    <view wx:for="{{commendList}}" class="{{item.style}}"  data-url= "{{item.url}}" bindtap="listClickDetail">
+      <image src="../../images/{{item.pic}}"/>
+      <view class='text-item'>{{item.title}}</view>
+    </view>
 </view>
 

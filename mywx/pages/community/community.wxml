@@ -1,0 +1,8 @@
+
+<view style="display:flex;flex-wrap: wrap-reverse;">
+    <view class='flex-item' wx:for="{{commendList}}">
+      <image src="../../images/{{item.pic}}" class='user-icon'/>
+      111
+    </view>
+</view>
+

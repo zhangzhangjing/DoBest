@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/person/person",
     "pages/recommend/recommend",
+    "pages/community/community",
     "pages/logs/logs"
   ],
   "window":{
@@ -28,7 +29,7 @@
     {
       "selectedIconPath": "images/shequse.png",
       "iconPath": "images/shequ.png",
-      "pagePath": "pages/logs/logs",
+      "pagePath": "pages/community/community",
       "text": "社区"
     },
       {
