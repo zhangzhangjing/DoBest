@@ -14,7 +14,7 @@ Page({
         'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526467461377&di=42de1a06ffa429526ee1c47cb0c10fe9&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01ea0657cce2e00000012e7e322bc9.jpg%40900w_1l_2o_100sh.jpg',
         'http://img.zcool.cn/community/01ae67595b5377a8012193a3c07700.jpg@2o.jpg'
     ],
-    indicatorDots: false,
+    indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000
@@ -60,6 +60,11 @@ Page({
       hasUserInfo: true
     })
   },
+    onGotUserInfo: function(e) {
+        console.log(e.detail.errMsg)
+        console.log(e.detail.userInfo)
+        console.log(e.detail.rawData)
+    },
   getPicture:function (e) {
     var _that = this;
       wx.chooseImage({

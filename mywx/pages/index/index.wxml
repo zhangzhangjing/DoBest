@@ -11,7 +11,7 @@
     <view class="flex-row" style="display: flex;flex-direction: row;">
                 <view class="flex-view-item btnitem">
                     <image src="../../images/home.png" class="iconbtn"/>
-                    电影
+                    <text>电影</text>
                 </view>
                 <view class="flex-view-item btnitem">
                  <image src="../../images/home.png"  class="iconbtn"/>
@@ -47,7 +47,7 @@
 </view>
 <view class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"> 获取头像昵称 </button>
     <block wx:else>
     </block>
   </view>
