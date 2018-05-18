@@ -52,9 +52,9 @@ background:#fff;
    text-align: center;
 }
 .iconbtn{
-    width:100rpx;
-    height:100rpx;
-    margin-top: 10rpx
+    width:90rpx;
+    height:90rpx;
+    margin-top: 15rpx
     
 }
 .bg_blue{

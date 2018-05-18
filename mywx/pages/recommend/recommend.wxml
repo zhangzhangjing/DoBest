@@ -6,7 +6,7 @@
 </view>
 
 <view style="display:flex;flex-wrap: wrap-reverse;">
-    <view wx:for="{{commendList}}" class="{{item.style}}"  data-url = "{{item.id}}" bindtap="listClickDetail">
+    <view wx:for="{{commendList}}" class="{{item.style}}"  data-url= "{{item.url}}" bindtap="listClickDetail">
       <image src="../../images/{{item.pic}}"/>
       <view class='text-item'>{{item.title}}</view>
     </view>

@@ -5,6 +5,7 @@ const app = getApp()
 Page({
   data: {
     _num: 1,
+    _url:'',
     commendList: [{
       id: 0,
       title:"漫游成都",
@@ -47,13 +48,15 @@ Page({
       }]
   },
   clickBtn: function (e) {
+    console.log(e.target)
     console.log(e.target.dataset.num)
     this.setData({
       _num: e.target.dataset.num
     })
   },
   listClickDetail: function(e){
-    console.log(e.target.dataset.url);
+    console.log(e.currentTarget);
+    console.log(e.currentTarget.dataset.url);
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
