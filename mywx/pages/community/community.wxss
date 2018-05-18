@@ -4,10 +4,62 @@
   margin-bottom: 15rpx;
 }
 .user-icon{
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 100%;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
   overflow: hidden;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}
+.w100{
+  width: 100%;
+}
+.size20{
+  font-size: 38rpx;
+}
+.size18{
+  font-size: 28rpx;
+}
+.flex{
+  display: flex;
+}
+.title-item{
+  height: 100rpx;
+  width: 300rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}
+.item-oper{
+  width: 220rpx;
+  height: 100rpx;
+  margin-top: 10rpx;
+  margin-left: 80rpx;
+}
+.w50{
+  width: 50%;
+}
+.icon-oper{
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 25rpx;
+}
+.m-l-10{
+  margin-left: 5rpx;
+}
+.v-center{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+}
+.text-item{
+  width: 700rpx;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}
+.pic-item{
+  width: 237rpx;
+  height: 180rpx;
+  margin-top:10rpx;
+  margin-left:10rpx;
+
 }

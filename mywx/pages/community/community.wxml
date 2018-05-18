@@ -1,8 +1,30 @@
 
 <view style="display:flex;flex-wrap: wrap-reverse;">
     <view class='flex-item' wx:for="{{commendList}}">
-      <image src="../../images/{{item.pic}}" class='user-icon'/>
-      111
+      <view class='w100 flex'>
+        <image src="../../images/{{item.pic}}" class='user-icon'/>
+        <view class='title-item'>
+          <view class='size20'>111</view>
+          <view class='size18'>111</view>
+        </view>
+        <view class='item-oper flex'>
+          <view class='w50 flex'>
+            <image src="{{imgUrl}}" class='icon-oper' bindtap="clickZan" data-src='../../images/zan.png'/>
+          </view>
+          <view class='w50 flex'>
+            <image src="../../images/ping.png" class='icon-oper'/>
+          </view>
+        </view> 
+      </view>
+      <view class='w100'>
+        <view class='text-item'>111111111111111</view>
+      </view>
+      <view class='w100 flex'>
+        <image src='../../images/compic4.jpg' class='pic-item'/>
+        <image src='../../images/compic4.jpg' class='pic-item'/>
+        <image src='../../images/compic4.jpg' class='pic-item'/>
+      </view>
+      
     </view>
 </view>
 
