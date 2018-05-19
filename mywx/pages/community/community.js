@@ -6,51 +6,76 @@ Page({
   data: {
     _num: 1,
     imgUrl:'../../images/zan.png',
-    commendList: [{
+    opacity: 1,
+    communityList: [{
       id: 0,
-      title:"漫游成都",
-      pic:'compic2.jpg',
-      url:"www.baidu.com",
-      style:"pic-item1"
+      username:"重庆新闻网",
+      userPic:'compic2.jpg',
+      content:"多少红颜悴，多少相思碎，唯留血染墨香哭乱冢。 ",
+      createtime:"今天 14：28",
+      zan:true,
+      _src:false,
+      pictures: ['compic1.jpg', 'compic2.jpg', 'compic3.jpg'],
     }, {
-      id: 1,
-      title: "浪漫三亚",
-      pic: 'compic1.jpg',
-      url: "www.baidu.com",
-      style: "pic-item2"
+        id: 1,
+        username: "Angular",
+        userPic: 'compic1.jpg',
+        content: "苍茫大地一剑尽挽破，何处繁华笙歌落。斜倚云端千壶掩寂寞，纵使他人空笑我。",
+        createtime: "2018-5-8 12：23",
+        zan: false,
+        pictures: ['compic5.jpg']
       },{
         id: 2,
-        title: "春季温泉",
-        pic: 'compic3.jpg',
-        url: "www.baidu.com",
-        style: "pic-item2"
+        username: "周星驰",
+        userPic: 'compic3.jpg',
+        content: " 寄君一曲，不问曲终人聚散。",
+        createtime: "今天 14：28",
+        zan: true,
+        pictures: ['compic1.jpg', 'compic5.jpg']
       },
       {
         id: 3,
-        title: "蓝色沸点KTV",
-        pic: 'compic4.jpg',
-        url: "www.baidu.com",
-        style: "pic-item1"
+        username: "张兴义",
+        userPic: 'compic6.jpg',
+        content: "灯火星星，人声杳杳，歌不尽乱世烽火。",
+        createtime: "2018-4-9 12：23",
+        zan: false,
+        pictures: ['compic1.jpg', 'compic2.jpg', 'compic3.jpg']
       },
       {
         id: 4,
-        title: "下午茶",
-        pic: 'compic5.jpg',
-        url: "www.baidu.com",
-        style: "pic-item3"
+        username: "大圣",
+        userPic: 'compic5.jpg',
+        content: "一年老一年，一日没一日，一秋又一秋，一辈催一辈 一聚一离别，一喜一伤悲，一榻一身卧，一生一梦里 寻一夥相识，他一会咱一会 那一般相知，吹一会唱一会。",
+        createtime: "2018-4-9 12：23",
+        zan: false,
+        pictures: ['compic1.jpg','compic3.jpg']
       },
       {
         id: 5,
-        title: "3D电影票",
-        pic: 'compic6.jpg',
-        url: "www.baidu.com",
-        style: "pic-item3"
+        username: "四月梅花",
+        userPic: 'compic6.jpg',
+        content: "[◆．” 莪菂丗堺,.﹏;*.只剩﹌.棒棒糖* .？ ┽☆ρs﹎..偶是↘ㄚi个贪玩旳╭ →孩孑?_? わ ↘。",
+        createtime: "今天 10：28",
+        zan: true,
+        pictures: ['compic1.jpg' , 'compic6.jpg', 'compic4.jpg']
       }]
   },
   
-  clickZan:function(e){
-    this.setData({
-      imgUrl: '../../images/zan1.png'
-    })
+  clickZan: function (e){
+    const length = this.data.communityList.length
+    var List = this.data.communityList;
+    var cla = e.currentTarget.id;
+    let that = this;
+    for (var index in List) {
+      if(index == cla){
+        List[index].zan = !List[index].zan;
+        console.log(List[index].zan);
+        that.setData({
+          opacity: 0.3
+        })
+      }
+        
+    } 
   }
 })
