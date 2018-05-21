@@ -70,21 +70,18 @@ Page({
     var flag =0;
     for (var index in List) {
       if(index == cla){
-        List[index].zan = !List[index].zan;
         console.log(List[index].zan);
         if (List[index].zan){
           flag = 0;
         }else{
           flag = 1;
         }
-        console.log(flag);
+        List[index].zan = flag;
         that.setData({
-          zan: !List[index].zan,
-          opacity: flag
+          communityList: that.data.communityList
         })
-      }
-        
-    } 
-    console.log(e.currentTarget);
+      }   
+    }
+ 
   }
 })
