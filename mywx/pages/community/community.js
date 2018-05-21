@@ -72,31 +72,7 @@ Page({
         pictures: ['compic1.jpg', 'compic2.jpg', 'compic3.jpg'],
       }]
   },
-  
-  clickZan: function (e){
-    const length = this.data.communityList.length
-    var List = this.data.communityList;
-    var cla = e.currentTarget.id;
-    let that = this;
-    var flag =0;
-    for (var index in List) {
-      if(index == cla){
-        if (List[index].zan){
-          flag = 0;
-        }else{
-          flag = 1;
-        }
-        List[index].zan = flag;
-        that.setData({
-          communityList: that.data.communityList
-        })
-      }   
-    }
  
-  },
-  // onPullDownRefresh: function () {
-  //   wx.stopPullDownRefresh()
-  // },
   //下拉刷新
   onPullDownRefresh: function () {
     wx.showNavigationBarLoading() //在标题栏中显示加载
@@ -161,5 +137,28 @@ Page({
         ],
       })
     }, 1000)
-  }
+  },
+
+  clickZan: function (e) {
+    var List = this.data.communityList;
+    console.log(List);
+    var cla = e.currentTarget.id;
+    let that = this;
+    var flag = 0;
+    console.log(cla);
+    for (var index in List) {
+      if (List[index].id == cla) {
+        if (List[index].zan) {
+          flag = 0;
+        } else {
+          flag = 1;
+        }
+        List[index].zan = flag;
+        that.setData({
+          communityList: that.data.communityList
+        })
+      }
+    }
+
+  },
 })
