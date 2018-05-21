@@ -1,9 +1,9 @@
 <view style="display:flex;flex-wrap: wrap-reverse;">
-    <view class='flex-item' style='background:#f84b23;' wx:for="{{myInfo}}">
+    <view class='flex-item' style='background:#f84b23;'>
       <view class='w100 flex'>
-        <image src="../../images/{{item.userPic}}" class='user-icon'/>
+        <image src="{{avartar}}" class='user-icon' bindtap='changePic'/>
         <view class='title-item'>
-          <view class='size20'>{{item.username}}</view>
+          <view class='size20'>{{nickName}}</view>
         </view>
         <view class='item-oper flex'>
           <view class='w50 flex'>
