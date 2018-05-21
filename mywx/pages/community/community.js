@@ -72,13 +72,6 @@ Page({
         pictures: ['compic1.jpg', 'compic2.jpg', 'compic3.jpg'],
       }]
   },
-<<<<<<< HEAD
-  
-  clickZan: function (list,way){
-    console.log(list);
-    console.log(way);
-    const length = this.data.communityList.length
-=======
  
   //下拉刷新
   onPullDownRefresh: function () {
@@ -147,7 +140,6 @@ Page({
   },
 
   clickZan: function (e) {
->>>>>>> d5a28991fe0760eddd361a14e05695d50fc28f12
     var List = this.data.communityList;
     console.log(List);
     var cla = e.currentTarget.id;

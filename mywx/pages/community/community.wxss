@@ -60,9 +60,6 @@
   margin-top:10rpx;
   margin-left:10rpx;
   margin-bottom: 10rpx;
-<<<<<<< HEAD
-=======
-
 }
 
 /*  加载更多   */
@@ -87,5 +84,4 @@
 .weui-loadmore__tips {
   display: inline-block;
   vertical-align: middle;
->>>>>>> d5a28991fe0760eddd361a14e05695d50fc28f12
 }
