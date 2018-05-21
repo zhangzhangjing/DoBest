@@ -62,7 +62,9 @@ Page({
       }]
   },
   
-  clickZan: function (e){
+  clickZan: function (list,way){
+    console.log(list);
+    console.log(way);
     const length = this.data.communityList.length
     var List = this.data.communityList;
     var cla = e.currentTarget.id;

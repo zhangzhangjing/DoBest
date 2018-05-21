@@ -61,5 +61,5 @@
   height: 180rpx;
   margin-top:10rpx;
   margin-left:10rpx;
-
+  margin-bottom: 10rpx;
 }
