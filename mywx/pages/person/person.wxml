@@ -1,1 +1,76 @@
-<view>11</view>
+<view style="display:flex;flex-wrap: wrap-reverse;">
+    <view class='flex-item' style='background:#f84b23;' wx:for="{{myInfo}}">
+      <view class='w100 flex'>
+        <image src="../../images/{{item.userPic}}" class='user-icon'/>
+        <view class='title-item'>
+          <view class='size20'>{{item.username}}</view>
+        </view>
+        <view class='item-oper flex'>
+          <view class='w50 flex'>
+            <image src="../../images/icons/setting.png" class='icon-oper'/>
+          </view>
+          <view class='w50 flex'>
+            <image src="../../images/icons/msg.png" class='icon-oper'/>
+          </view>
+        </view> 
+      </view>
+    </view>  
+</view>
+<view class='flex-item'>
+  <view class='item-content flex'>
+    <image src='../../images/icons/wo1.png' class='wo-icon'/>
+    <view class='title-wo'>我的钱包</view>
+    <image src='../../images/icons/detail.png' class='detail-icon'/>
+  </view>
+  <view class='item-content flex'>
+    <image src='../../images/icons/wo2.png' class='wo-icon'/>
+    <view class='title-wo'>我的订单</view>
+    <image src='../../images/icons/detail.png' class='detail-icon'/>
+  </view>
+  <view class='item-content flex'>
+    <image src='../../images/icons/wo3.png' class='wo-icon'/>
+    <view class='title-wo'>我的收藏</view>
+    <image src='../../images/icons/detail.png' class='detail-icon'/>
+  </view>
+  <view class='item-content flex'>
+    <image src='../../images/icons/wo4.png' class='wo-icon'/>
+    <view class='title-wo'>物流信息</view>
+    <image src='../../images/icons/detail.png' class='detail-icon'/>
+  </view>
+</view>
+
+<view class='flex-item'>
+  <view class='item-content flex'>
+    <image src='../../images/icons/wo5.png' class='wo-icon'/>
+    <view class='title-wo'>社区活动</view>
+    <image src='../../images/icons/detail.png' class='detail-icon'/>
+  </view>
+  <view class='item-content flex'>
+    <image src='../../images/icons/wo6.png' class='wo-icon'/>
+    <view class='title-wo'>我的卡券</view>
+    <image src='../../images/icons/detail.png' class='detail-icon'/>
+  </view>
+  <view class='item-content flex'>
+    <image src='../../images/icons/wo7.png' class='wo-icon'/>
+    <view class='title-wo'>我的关注</view>
+    <image src='../../images/icons/detail.png' class='detail-icon'/>
+  </view>
+  <view class='item-content flex'>
+    <image src='../../images/icons/wo8.png' class='wo-icon'/>
+    <view class='title-wo'>官方客服</view>
+    <image src='../../images/icons/detail.png' class='detail-icon'/>
+  </view>
+</view>
+
+<view class='flex-item'>
+  <view class='item-content flex'>
+    <image src='../../images/icons/wo9.png' class='wo-icon'/>
+    <view class='title-wo'>问答专区</view>
+    <image src='../../images/icons/detail.png' class='detail-icon'/>
+  </view>
+  <view class='item-content flex'>
+    <image src='../../images/icons/wo10.png' class='wo-icon'/>
+    <view class='title-wo'>关于嗨吧</view>
+    <image src='../../images/icons/detail.png' class='detail-icon'/>
+  </view>
+</view>

@@ -70,7 +70,6 @@ Page({
     var flag =0;
     for (var index in List) {
       if(index == cla){
-        console.log(List[index].zan);
         if (List[index].zan){
           flag = 0;
         }else{
