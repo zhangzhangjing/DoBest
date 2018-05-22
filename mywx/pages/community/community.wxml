@@ -9,6 +9,7 @@
         </view>
         <view class='item-oper flex'>
           <view class='w50 flex'>
+
             <image data-src='{{item.zan}}{{opacity}}' src="../../images/zan{{item.zan}}.png" class='icon-oper' bindtap="clickZan" id='{{item.id}}'/>
           </view>
           <view class='w50 flex'>
