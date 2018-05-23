@@ -1,0 +1,5 @@
+/* pages/lists/list.wxss */
+.mapitem{
+width:750rpx;
+height:450rpx;
+}

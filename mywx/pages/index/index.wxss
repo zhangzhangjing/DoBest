@@ -42,19 +42,18 @@ background:#fff;
 }
 
 .btnitem{
-    width:120rpx;
-    margin-left:55rpx;
-    margin-top:3%;
-   background:#444;
-   height:120rpx;
+    width:100rpx;
+    margin-left:70rpx;
+    margin-top: 34rpx;
+   height:100rpx;
    border-radius:18rpx;
    color: #fff;
    text-align: center;
 }
 .iconbtn{
-    width:90rpx;
-    height:90rpx;
-    margin-top: 15rpx
+    width:80rpx;
+    height:80rpx;
+    margin-top: 10rpx
     
 }
 .bg_blue{
@@ -93,7 +92,7 @@ background:#fff;
   width: 50%;
 }
 .index-pic{
-  width: 300rpx;
+  width: 320rpx;
   height: 160rpx;
   margin-left: 30rpx;
   margin-top: 20rpx;

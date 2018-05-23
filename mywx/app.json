@@ -4,7 +4,9 @@
     "pages/person/person",
     "pages/recommend/recommend",
     "pages/community/community",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/lists/index",
+    "pages/lists/list"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,0 +1,31 @@
+<view style="display:flex;flex-wrap: wrap-reverse;">
+     <view class="flex-btn-item" bindtap="start">开始录音</view>
+    <view class="flex-btn-item" bindtap="stop">停止录音</view>
+    <view class="flex-btn-item" bindtap="play">播放录音</view>
+</view>
+<view>
+<button type='btn' bindtap='playMusic'>播放我的音乐</button>
+</view>
+<view>
+    <video src="{{src}}" class='my-video'></video>
+    <button bindtap="bindButtonTap">获取视频</button>
+</view>
+
+<view class="section">
+  <form bindsubmit='searchBox'>
+    <input placeholder="姓名" class='input' auto-focus value='{{username}}' name='username'/>
+    <input placeholder="电话" class='input' value='{{tel}}' name='tel'/>
+    <checkbox-group bindchange="checkboxChange" style='margin-left:10rpx;margin-bottom:10rpx;'>
+      <label class="checkbox" wx:for="{{items}}">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>  
+  </checkbox-group> 
+    <view class="btn-area">
+      <button bindtap="submit" form-type='submit'>提交</button>
+    </view>
+  </form>
+</view>
+
+
+
+

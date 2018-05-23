@@ -10,40 +10,42 @@ Page({
       id: 0,
       title:"漫游成都",
       pic:'compic2.jpg',
-      url:"www.baidu.com",
+      url:0,
       style:"pic-item1"
-    }, {
+    },
+     {
       id: 1,
       title: "浪漫三亚",
       pic: 'compic1.jpg',
-      url: "www.baidu.com",
+      url: 1,
       style: "pic-item2"
-      },{
+      },
+      {
         id: 2,
         title: "春季温泉",
         pic: 'compic3.jpg',
-        url: "www.baidu.com",
+        url: 2,
         style: "pic-item2"
       },
       {
         id: 3,
         title: "蓝色沸点KTV",
         pic: 'compic4.jpg',
-        url: "www.baidu.com",
+        url: 3,
         style: "pic-item1"
       },
       {
         id: 4,
         title: "下午茶",
         pic: 'compic5.jpg',
-        url: "www.baidu.com",
+        url: 4,
         style: "pic-item3"
       },
       {
         id: 5,
         title: "3D电影票",
         pic: 'compic6.jpg',
-        url: "www.baidu.com",
+        url: 5,
         style: "pic-item3"
       }]
   },
@@ -57,6 +59,9 @@ Page({
   listClickDetail: function(e){
     console.log(e.currentTarget);
     console.log(e.currentTarget.dataset.url);
+    wx.navigateTo({
+      url: '../../pages/lists/index',
+    })
   },
   onLoad: function () {
     if (app.globalData.userInfo) {

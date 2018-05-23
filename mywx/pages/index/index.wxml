@@ -10,37 +10,33 @@
 </swiper>
 <view class="icons">
     <view class="flex-row" style="display: flex;flex-direction: row;">
-      <view class="flex-view-item btnitem bg_blue">
+      <view class="flex-view-item btnitem bg_blue" bindtap='linkToList'>
           <image src="../../images/icons/iconn1.png" class="iconbtn"/>
       </view>
-      <view class="flex-view-item btnitem bg_pink">
+      <view class="flex-view-item btnitem bg_pink" bindtap='linkToList'>
         <image src="../../images/icons/iconn2.png"  class="iconbtn"/> 
       </view>
-      <view class="flex-view-item btnitem bg_red">
-        <image src="../../images/icons/iconn3.png"  class="iconbtn"/>
-          
+      <view class="flex-view-item btnitem bg_red" bindtap='linkToList'>
+        <image src="../../images/icons/iconn3.png"  class="iconbtn"/> 
       </view>
-      <view class="flex-view-item btnitem bg_yelow">
-        <image src="../../images/icons/iconn4.png"  class="iconbtn"/>
-          
+      <view class="flex-view-item btnitem bg_yelow" bindtap='linkToList'>
+        <image src="../../images/icons/iconn4.png"  class="iconbtn"/>    
       </view>
-        </view>
-        <view class="flex-row" style="display: flex;flex-direction: row;">
-            <view class="flex-view-item btnitem  bg_dark">
-                <image src="../../images/icons/iconn5.png" class="iconbtn"/>  
-            </view>
-            <view class="flex-view-item btnitem bg_ceity">
-            <image src="../../images/icons/iconn6.png"  class="iconbtn"/>
-              
-            </view>
-            <view class="flex-view-item btnitem bg_yellow">
-            <image src="../../images/icons/iconn7.png"  class="iconbtn"/>
-              
-            </view>
-            <view class="flex-view-item btnitem bg_green">
-            <image src="../../images/icons/iconn8.png"  class="iconbtn"/>
-            </view>
-        </view>
+    </view>
+    <view class="flex-row" style="display: flex;flex-direction: row;">
+      <view class="flex-view-item btnitem  bg_dark" bindtap='linkToList'>
+          <image src="../../images/icons/iconn5.png" class="iconbtn"/>  
+      </view>
+      <view class="flex-view-item btnitem bg_ceity" bindtap='linkToList'>
+        <image src="../../images/icons/iconn6.png"  class="iconbtn"/> 
+      </view>
+      <view class="flex-view-item btnitem bg_yellow" bindtap='linkToList'>
+        <image src="../../images/icons/iconn7.png"  class="iconbtn"/> 
+      </view>
+      <view class="flex-view-item btnitem bg_green" bindtap='linkToList'>
+        <image src="../../images/icons/iconn8.png"  class="iconbtn"/>
+      </view>
+    </view>
 </view>
 <view class='two_block'>
   <view class='flex-row'  style="display: flex;flex-direction: row;">

@@ -9,7 +9,6 @@
         </view>
         <view class='item-oper flex'>
           <view class='w50 flex'>
-
             <image data-src='{{item.zan}}{{opacity}}' src="../../images/zan{{item.zan}}.png" class='icon-oper' bindtap="clickZan" id='{{item.id}}'/>
           </view>
           <view class='w50 flex'>
@@ -21,7 +20,7 @@
         <view class='text-item size18'>{{item.content}}</view>
       </view>
       <view class='w100 flex'>
-        <image wx:for='{{item.pictures}}' wx:for-index="index" src='../../images/{{item}}' class='pic-item'/>
+        <image wx:for='{{item.pictures}}' wx:for-index="index" src='../../images/{{item}}' data-src='../../images/{{item}}' class='pic-item' bindtap='ViewPic'/>
       </view>
       
     </view>

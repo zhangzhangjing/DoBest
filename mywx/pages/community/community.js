@@ -8,6 +8,9 @@ Page({
     imgUrl:'../../images/zan.png',
     opacity: 1,
     isHideLoadMore:false,
+    imglist: ['http://img.zcool.cn/community/011bce580cb585a84a0d304f40b5b4.jpg',
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526467461377&di=42de1a06ffa429526ee1c47cb0c10fe9&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01ea0657cce2e00000012e7e322bc9.jpg%40900w_1l_2o_100sh.jpg',
+      'http://img.zcool.cn/community/01ae67595b5377a8012193a3c07700.jpg@2o.jpg'],
     communityList: [{
       id: 0,
       username:"重庆新闻网",
@@ -159,6 +162,13 @@ Page({
         })
       }
     }
-
   },
+  ViewPic:function(e){
+    var current = e.currentTarget.dataset.src;
+    console.log(current);
+    wx.previewImage({
+      current: '', // 当前显示图片的http链接  
+      urls: this.data.imglist // 需要预览的图片http链接列表  
+    })
+  }
 })

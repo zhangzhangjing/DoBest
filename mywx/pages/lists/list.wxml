@@ -1,0 +1,5 @@
+<map id="myMap" show-location class='mapitem'/>
+
+<view style="display:flex;flex-wrap: wrap-reverse;">
+    <button bindtap='getCenterLocation'>点击设置当前位置</button>
+</view>

@@ -101,5 +101,10 @@ Page({
         this.setData({
             duration: e.detail.value
         })
+    },
+    linkToList:function(){
+      wx.navigateTo({
+        url: '../../pages/lists/list',
+      })
     }
 })
