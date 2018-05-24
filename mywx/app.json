@@ -2,6 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/person/person",
+    "pages/person/index",
     "pages/recommend/recommend",
     "pages/community/community",
     "pages/logs/logs",

@@ -60,7 +60,7 @@ Page({
     console.log(e.currentTarget);
     console.log(e.currentTarget.dataset.url);
     wx.navigateTo({
-      url: '../../pages/lists/index',
+      url: '../../pages/lists/index'
     })
   },
   onLoad: function () {

@@ -163,6 +163,11 @@ Page({
       }
     }
   },
+  toUserInfo:function(){
+    wx.navigateTo({
+      url: '../../pages/person/index',
+    })
+  },
   ViewPic:function(e){
     var current = e.currentTarget.dataset.src;
     console.log(current);

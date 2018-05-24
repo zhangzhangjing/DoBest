@@ -1,5 +1,9 @@
-<map id="myMap" show-location class='mapitem'/>
-
-<view style="display:flex;flex-wrap: wrap-reverse;">
-    <button bindtap='getCenterLocation'>点击设置当前位置</button>
-</view>
+<map id="myMap"
+      longitude="{{longitude}}" latitude="{{latitude}}" 
+      markers="{{markers}}"
+      scale="20" 
+      style="width:{{map_width}}px;height:{{map_height}}px"
+      bindregionchange="regionchange"
+      controls="{{controls}}"
+      show-location class='mapitem'>
+</map>

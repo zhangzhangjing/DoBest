@@ -1,0 +1,12 @@
+<view>
+  <button bindtap='scanBtn'>扫描加好友</button>
+</view>
+<view>
+  <button bindtap='setScreenBright'>设置屏幕亮度</button>
+</view>
+
+<slider min="0" max="1" step="0.1"bindchange="changeScreenLight" value='{{screenLight}}'/>  
+<view>屏幕亮度：{{ScreenBrightness}}</view> 
+<view>
+  <button bindtap='phoneNumTap'>{{phoneNum}}</button>
+</view> 

@@ -2,7 +2,7 @@
 <view style="display:flex;flex-wrap: wrap-reverse;">
     <view class='flex-item' wx:for="{{communityList}}">
       <view class='w100 flex'>
-        <image src="../../images/{{item.userPic}}" class='user-icon'/>
+        <image src="../../images/{{item.userPic}}" class='user-icon' bindtap='toUserInfo'/>
         <view class='title-item'>
           <view class='size20'>{{item.username}}</view>
           <view class='size18'>{{item.createtime}}</view>
@@ -20,7 +20,7 @@
         <view class='text-item size18'>{{item.content}}</view>
       </view>
       <view class='w100 flex'>
-        <image wx:for='{{item.pictures}}' wx:for-index="index" src='../../images/{{item}}' data-src='../../images/{{item}}' class='pic-item' bindtap='ViewPic'/>
+        <image wx:for='{{item.pictures}}' src='../../images/{{item}}' data-src='../../images/{{item}}' class='pic-item' bindtap='ViewPic'/>
       </view>
       
     </view>

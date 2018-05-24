@@ -36,8 +36,17 @@ Page({
         })
       }
     })
-
-
+  },
+  makePhoneCall:function(){
+    wx.makePhoneCall({
+      phoneNumber: '10086' //仅为示例，并非真实的电话号码
+    })
+  },
+  pathTocom:function(e){
+    wx.navigateTo({
+      url: '../../pages/lists/list'
+    })
+    console.log(111)
   }
   
 })
