@@ -48,15 +48,25 @@
     </view>
   </view>
 </view>
-<view class="container">
+<view class='two_block'>
+  <view class='flex-row'  style="display: flex;flex-direction: row;">
+    <view class='index-flex' style='border-right:1px solid #eee;'>
+      <image src="../../images/indexpic2.png" class='index-pic'/>
+    </view>
+    <view class='index-flex'>
+      <image src="../../images/indexpic1.png"  class='index-pic'/>
+    </view>
+  </view>
+</view>
+
+<!-- <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"> 获取头像昵称 </button>
     <block wx:else>
     </block>
   </view>
-</view>
+</view> -->
 <view>
-
 </view>
 </scroll-view>
 

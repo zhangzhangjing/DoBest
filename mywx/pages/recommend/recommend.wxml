@@ -1,11 +1,11 @@
 <!--index.wxml-->
-<view class="flex-row" style="display: flex;flex-direction: row;">
+<view class="flex-row" style="display: flex;flex-wrap: wrap-reverse;flex-direction: row;">
     <view class="{{_num == 1?'select-btn':'flex-btn-item'}}" data-num = "1" bindtap="clickBtn">推荐</view>
     <view class="{{_num == 2?'select-btn':'flex-btn-item'}}" data-num = "2" bindtap="clickBtn">优惠活动</view>
     <view class="{{_num == 3?'select-btn':'flex-btn-item'}}" data-num = "3" bindtap="clickBtn">最近热门</view>
 </view>
 
-<view style="display:flex;flex-wrap: wrap-reverse;">
+<view style="display:flex;flex-wrap: wrap-reverse;flex-wrap: wrap-reverse;">
     <view wx:for="{{commendList}}" class="{{item.style}}"  data-url= "{{item.url}}" bindtap="listClickDetail">
       <image src="../../images/{{item.pic}}"/>
       <view class='text-item'>{{item.title}}</view>
