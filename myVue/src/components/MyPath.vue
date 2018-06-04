@@ -3,10 +3,24 @@
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <div>111</div>
+    <!--<p>{{ count }}</p>-->
+    <!--<p>-->
+      <!--<button @click="increment">+</button>-->
+      <!--<button @click="decrement">-</button>-->
+    <!--</p>-->
   </div>
 </template>
 
 <script>
+// const store = new Vuex.Store({
+//   state: {
+//     count: 0
+//   },
+//   mutations: {
+//     increment: state => state.count++,
+//     decrement: state => state.count--
+//   }
+// })
 export default {
   name: 'MyPath',
   data () {
@@ -14,6 +28,19 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   }
+  // computed: {
+  //   count () {
+  //     return store.state.count
+  //   }
+  // },
+  // methods: {
+  //   increment () {
+  //     store.commit('increment')
+  //   },
+  //   decrement () {
+  //     store.commit('decrement')
+  //   }
+  // }
 }
 
 </script>

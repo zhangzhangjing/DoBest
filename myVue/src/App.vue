@@ -2,12 +2,19 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
+    <button @click="clickme">点击我</button>
+    <span>{{$store.state.count}}</span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    clickme: function () {
+      this.$store.commit('increment', 1)
+    }
+  }
 }
 
 </script>
