@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <p>这个页面有很多动画效果展示模块、组件的应用、v-for的应用、computed函数等知识点。</p>
     <input type="text" v-model="content" >
     <button @click = addList>添加</button>
     <ul>
@@ -79,8 +80,10 @@ export default {
   },
   methods: {
     addList: function () {
-      this.todoList.push(this.content)
-      this.content = ''
+      if (this.content) {
+        this.todoList.push(this.content)
+        this.content = ''
+      }
     },
     deleteitem: function () {
       this.todoList.splice(this.item, 1)

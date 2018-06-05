@@ -18,7 +18,6 @@ const store = new Vuex.Store({
       console.log(state.count)
     }
   }
-
 })
 new Vue({
   el: '#app',

@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import MyIndex from '@/components/MyIndex'
 import MyPath from '@/components/MyPath'
 import TodoList from '@/components/TodoList'
+import CountNum from '@/components/CountNum'
 
 Vue.use(Router)
 
@@ -10,8 +11,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'MyIndex',
+      component: MyIndex
     },
     {
       path: '/mypath',
@@ -22,6 +23,11 @@ export default new Router({
       path: '/todolist',
       name: 'TodoList',
       component: TodoList
+    },
+    {
+      path: '/countnum',
+      name: 'CountNum',
+      component: CountNum
     }
   ]
 })
