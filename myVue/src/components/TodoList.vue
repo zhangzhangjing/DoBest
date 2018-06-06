@@ -4,11 +4,8 @@
     <input type="text" v-model="content" >
     <button @click = addList>添加</button>
     <ul>
-      <li
-        v-for='(item,index) in todoList'
-        :key="index"
-        @click = deleteitem
-      >{{item}}</li>
+      <li-item v-for='( item ,index) of todoList' :key = "index" :index="index" :content = 'item' @delete="deleteitem">
+      </li-item>
     </ul>
     <button v-on:click="show = !show">
       Toggle
@@ -48,7 +45,7 @@
 </template>
 
 <script>
-
+import LiItem from '@/components/LiItem'
 export default {
   name: 'TodoList',
   data () {
@@ -71,6 +68,7 @@ export default {
     }
   },
   components: {
+    'li-item': LiItem,
     'v-a': {
       template: '<div>Component A</div>'
     },
