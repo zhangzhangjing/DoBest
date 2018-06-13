@@ -66,6 +66,7 @@ export default {
       this.filterlists = this.worklists
       this.input = ''
       this.total = this.filterlists.length
+      this.currentradio = 1
     },
     selectTocomplete(listid){
       var that = this
@@ -105,7 +106,7 @@ export default {
 .form-group
   text-align left
   margin-top 15px
-  max-height 650px
+  height 500px
   overflow auto
 .flex
   display block
@@ -119,5 +120,6 @@ export default {
   float right
 .color-light
   color #d03438
+  margin-right 5px
 
 </style>
