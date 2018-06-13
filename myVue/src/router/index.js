@@ -4,6 +4,7 @@ import MyIndex from '@/components/MyIndex'
 import MyPath from '@/components/MyPath'
 import TodoList from '@/components/TodoList'
 import CountNum from '@/components/CountNum'
+import WorkList from '@/components/WorkList'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/countnum',
       name: 'CountNum',
       component: CountNum
+    },
+    {
+      path: '/worklist',
+      name: 'WorkList',
+      component: WorkList
     }
   ]
 })

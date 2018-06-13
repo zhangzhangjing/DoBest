@@ -25,6 +25,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="stylus" scoped>
+.hello
+  font-size 22px
+  color #222
 </style>

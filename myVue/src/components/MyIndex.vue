@@ -11,6 +11,9 @@
       <li>
         <a href="#/CountNum">点击累加效果</a>
       </li>
+      <li>
+        <a href="#/WorkList">工作计划列表</a>
+      </li>
     </ul>
   </div>
 </template>
