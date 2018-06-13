@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
     <p>{{msg}}</p>
-    <button @click="clickme">点击我</button>
+    <input type="number" v-model="num"/>
+    <button @click="clickme">点击累加</button>
     <span>{{$store.state.count}}</span>
   </div>
 </template>
@@ -11,12 +12,14 @@ export default {
   name: 'CountNum',
   data () {
     return {
-      msg: '这是一个vuex的一个实例：'
+      msg: '这是一个vuex的一个实例：',
+      num: ''
     }
   },
   methods: {
     clickme: function () {
-      this.$store.commit('increment', 1)
+      this.$store.commit('increment', this.num)
+      this.num = ''
     }
   }
 }

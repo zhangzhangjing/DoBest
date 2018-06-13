@@ -3,13 +3,13 @@
     <h1>{{ msg }}</h1>
     <ul>
       <li>
-        <a href="#/MyPath">进入一个子页面</a>
+        <a href="#/MyPath">登录页面</a>
       </li>
       <li>
-        <a href="#/TodoList">todoList</a>
+        <a href="#" @click= 'routerIn'>todoList</a>
       </li>
       <li>
-        <a href="#/CountNum">点击+1的效果</a>
+        <a href="#/CountNum">点击累加效果</a>
       </li>
     </ul>
   </div>
@@ -21,6 +21,15 @@ export default {
   data () {
     return {
       msg: 'vue.js学习'
+    }
+  },
+  methods: {
+    routerIn: function () {
+      if (sessionStorage.getItem('userInfo')) {
+        this.$router.push({path: '/TodoList'})
+      } else {
+        this.$router.push({path: '/MyPath'})
+      }
     }
   }
 }

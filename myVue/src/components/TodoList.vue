@@ -1,22 +1,28 @@
 <template>
   <div class="hello">
     <p>这个页面有很多动画效果展示模块、组件的应用、v-for的应用、computed函数等知识点。</p>
-    <input type="text" v-model="content" >
-    <button @click = addList>添加</button>
+    <el-row>
+      <el-col :span="12">
+        <el-input :span="12" v-model="content" placeholder="请输入内容"></el-input>
+      </el-col>
+      <el-col :span="12">
+        <el-button type="primary" @click = addList>添加</el-button>
+      </el-col>
+    </el-row>
     <ul>
       <li-item v-for='( item ,index) of todoList' :key = "index" :index="index" :content = 'item' @delete="deleteitem">
       </li-item>
     </ul>
-    <button v-on:click="show = !show">
-      Toggle
-    </button>
-    <transition name="bounce">
-      <p v-if="show">hello</p>
-    </transition>
+    <el-button type="primary" @click = "show = !show"> Toggle</el-button>
+    <el-row style="height: 50px;">
+      <transition name="bounce">
+        <p v-if="show">hello</p>
+      </transition>
+    </el-row>
     <transition  name="fade" mode="out-in">
-      <button v-bind:key="docState">
+      <el-button v-bind:key="docState" type="primary">
         {{ buttonMessage }}
-      </button>
+      </el-button>
     </transition>
     <input type="radio" id="one" value="v-a" v-model="view">
     <label for="one">A</label>
@@ -26,8 +32,8 @@
       <component v-bind:is="view"></component>
     </transition>
 
-    <button v-on:click="add">Add</button>
-    <button v-on:click="remove">Remove</button>
+    <el-button type="primary" v-on:click="add">Add</el-button>
+    <el-button type="primary" v-on:click="remove">Remove</el-button>
     <transition-group name="list" tag="p">
     <span v-for="item in items" v-bind:key="item" class="list-item">
       {{ item }}
