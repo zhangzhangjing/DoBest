@@ -1,20 +1,25 @@
 <template>
-  <div class="main-content hello">
-    <p>{{msg}}</p>
-    <input type="number" v-model="num"/>
-    <button @click="clickme">点击累加</button>
-    <span>{{$store.state.count}}</span>
+  <div >
+    <main-header message="vuex"></main-header>
+    <div class="main-content hello">
+      <el-input type="number" v-model="num" style="width: 40%;"/>
+      <el-button @click="clickme">点击累加</el-button>
+      <span>{{$store.state.count}}</span>
+    </div>
   </div>
 </template>
 
 <script>
+import MainHeader from './header.vue'
 export default {
   name: 'CountNum',
   data () {
     return {
-      msg: '这是一个vuex的一个实例：',
       num: ''
     }
+  },
+  components: {
+    MainHeader
   },
   methods: {
     clickme: function () {

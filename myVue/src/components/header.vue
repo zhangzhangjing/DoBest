@@ -1,13 +1,14 @@
 <template>
     <div class="main-header">
       <el-button class="btn-return" icon="el-icon-arrow-left" circle @click="routerToIndex" v-show="returnBtn"></el-button>
-      <span>{{myTitle}}</span>
+      <span>{{message}}</span>
     </div>
 </template>
 
 <script>
 export default {
   name: 'MainHeader',
+  props: ['message'],
   data () {
     return {
       myTitle: 'TodoList',

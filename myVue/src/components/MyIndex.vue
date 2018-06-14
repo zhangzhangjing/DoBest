@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <main-header message="首页"></main-header>
     <ul class="content">
       <li>
         <a href="#/MyPath">登录页面</a>
@@ -18,11 +19,15 @@
 </template>
 
 <script>
+import MainHeader from './header.vue'
 export default {
   name: 'MyIndex',
   data () {
     return {
     }
+  },
+  components: {
+    MainHeader
   },
   methods: {
     routerIn: function () {

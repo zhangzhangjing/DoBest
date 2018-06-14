@@ -1,61 +1,64 @@
 <template>
-  <div class="hello">
-    <p>这个页面有很多动画效果展示模块、组件的应用、v-for的应用、computed函数等知识点。</p>
-    <el-row>
-      <el-col :span="12">
-        <el-input :span="12" v-model="content" placeholder="请输入内容"></el-input>
-      </el-col>
-      <el-col :span="12">
-        <el-button type="primary" @click = addList>添加</el-button>
-      </el-col>
-    </el-row>
-    <ul>
-      <li-item
-        v-for='( item ,index) of todoList'
-        :key = "index"
-        :index="index"
-        :content = 'item'
-        @delete="deleteitem(index)">
-      </li-item>
-    </ul>
-    <el-button type="primary" @click = "show = !show"> Toggle</el-button>
-    <el-row style="height: 50px;">
-      <transition name="bounce">
-        <p v-if="show">hello</p>
+  <div>
+    <main-header message="动画效果展示、组件的应用、v-for、computed的应用"></main-header>
+    <div class="hello">
+      <el-row>
+        <el-col :span="16">
+          <el-input :span="12" v-model="content" placeholder="请输入内容"></el-input>
+        </el-col>
+        <el-col :span="6">
+          <el-button type="primary" @click = addList>添加</el-button>
+        </el-col>
+      </el-row>
+      <ul>
+        <li-item
+          v-for='( item ,index) of todoList'
+          :key = "index"
+          :index="index"
+          :content = 'item'
+          @delete="deleteitem(index)">
+        </li-item>
+      </ul>
+      <el-button type="primary" @click = "show = !show"> Toggle</el-button>
+      <el-row style="height: 50px;">
+        <transition name="bounce">
+          <p v-if="show">hello</p>
+        </transition>
+      </el-row>
+      <transition  name="fade" mode="out-in">
+        <el-button v-bind:key="docState" type="primary">
+          {{ buttonMessage }}
+        </el-button>
       </transition>
-    </el-row>
-    <transition  name="fade" mode="out-in">
-      <el-button v-bind:key="docState" type="primary">
-        {{ buttonMessage }}
-      </el-button>
-    </transition>
-    <input type="radio" id="one" value="v-a" v-model="view">
-    <label for="one">A</label>
-    <input type="radio" id="two" value="v-b" v-model="view">
-    <label for="two">B</label>
-    <transition name="fade" mode="out-in">
-      <component v-bind:is="view"></component>
-    </transition>
+      <input type="radio" id="one" value="v-a" v-model="view">
+      <label for="one">A</label>
+      <input type="radio" id="two" value="v-b" v-model="view">
+      <label for="two">B</label>
+      <transition name="fade" mode="out-in">
+        <component v-bind:is="view"></component>
+      </transition>
 
-    <el-button type="primary" v-on:click="add">Add</el-button>
-    <el-button type="primary" v-on:click="remove">Remove</el-button>
-    <transition-group name="list" tag="p">
-    <span v-for="item in items" v-bind:key="item" class="list-item">
-      {{ item }}
-    </span>
-    </transition-group>
-    <input v-model="query" placeholder="请输入要搜索的选项"><br/>
-    <transition-group>
-      <li
-        v-for="(item, index) in computedList"
-        v-bind:key="item.msg"
-        v-bind:data-index="index"
-      >{{ item.msg }}</li>
-    </transition-group>
+      <el-button type="primary" v-on:click="add">Add</el-button>
+      <el-button type="primary" v-on:click="remove">Remove</el-button>
+      <transition-group name="list" tag="p">
+      <span v-for="item in items" v-bind:key="item" class="list-item">
+        {{ item }}
+      </span>
+      </transition-group>
+      <el-input v-model="query" placeholder="请输入要搜索的选项" style="width: 200px;"/>
+      <transition-group>
+        <li
+          v-for="(item, index) in computedList"
+          v-bind:key="item.msg"
+          v-bind:data-index="index"
+        >{{ item.msg }}</li>
+      </transition-group>
+    </div>
   </div>
 </template>
 
 <script>
+import MainHeader from './header.vue'
 import LiItem from '@/components/LiItem'
 export default {
   name: 'TodoList',
@@ -79,6 +82,7 @@ export default {
     }
   },
   components: {
+    MainHeader,
     'li-item': LiItem,
     'v-a': {
       template: '<div>Component A</div>'

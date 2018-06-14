@@ -1,21 +1,25 @@
 <template>
-  <el-form label-position="left" label-width="0px" class="demo-ruleForm login-container">
-    <h3 class="title">系统登录</h3>
-    <el-form-item prop="phone">
-      <el-input type="text" v-model="phone" auto-complete="off" placeholder="手机号/咿呀号"></el-input>
-    </el-form-item>
-    <el-form-item prop="password">
-      <el-input type="password" v-model="password" auto-complete="off" placeholder="密码"></el-input>
-    </el-form-item>
-    <el-checkbox v-model="checked" checked class="remember">记住密码</el-checkbox>
-    <el-button type="text" @click="resetBtnTapped" style="float:right;">忘记密码?</el-button>
-    <el-form-item style="width:100%;">
-      <el-button type="primary" style="width:100%;" @click="handleSubmit2">登录</el-button>
-    </el-form-item>
-  </el-form>
+  <div>
+    <main-header message="登录页面"></main-header>
+    <el-form label-position="left" label-width="0px" class="demo-ruleForm login-container">
+      <h3 class="title">系统登录</h3>
+      <el-form-item prop="phone">
+        <el-input type="text" v-model="phone" auto-complete="off" placeholder="手机号/咿呀号"></el-input>
+      </el-form-item>
+      <el-form-item prop="password">
+        <el-input type="password" v-model="password" auto-complete="off" placeholder="密码"></el-input>
+      </el-form-item>
+      <el-checkbox v-model="checked" checked class="remember">记住密码</el-checkbox>
+      <el-button type="text" @click="resetBtnTapped" style="float:right;">忘记密码?</el-button>
+      <el-form-item style="width:100%;">
+        <el-button type="primary" style="width:100%;" @click="handleSubmit2">登录</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
 </template>
 
 <script>
+  import MainHeader from './header.vue'
 export default {
   name: 'MyPath',
   data () {
@@ -25,6 +29,9 @@ export default {
       phone: '18791589763',
       password: '123456'
     }
+  },
+  components: {
+    MainHeader
   },
   methods: {
     resetBtnTapped: function () {
