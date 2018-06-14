@@ -2,21 +2,21 @@
     <div class="main-content">
       <el-input v-model="input" placeholder="接下來需要做的事項" @keyup.enter.native="addList"></el-input>
       <el-checkbox-group v-model="checkList" class='form-group'>
-        <el-checkbox 
-        v-for="(item,index) of filterlists" 
-        :index='item.id' 
+        <el-checkbox
+        v-for="(item,index) of filterlists"
+        :index='item.id'
         :label='item.content'
-        :key='item.id' class='flex' 
-        @change="selectTocomplete(item.id)" 
+        :key='item.id' class='flex'
+        @change="selectTocomplete(item.id)"
         :disabled='item.iscompleted'>
         </el-checkbox>
       </el-checkbox-group>
        <div class='radio' style="margin-top: 20px;text-align: left;">
-        <el-radio 
-          v-for='item of selects' 
-          v-model='currentradio' 
-          :label="item.label" 
-          :index='item.label' 
+        <el-radio
+          v-for='item of selects'
+          v-model='currentradio'
+          :label="item.label"
+          :index='item.label'
           :key="item.label"
           @change='selectLists(item.label)'
            border size="medium">{{item.content}}</el-radio>
@@ -30,7 +30,7 @@ export default {
   data () {
     return {
       input: '',
-      checkList: ['选中且禁用'],
+      checkList: [],
       worklists: [],
       filterlists:[],
       currentradio:1,
@@ -115,7 +115,7 @@ export default {
   margin-left 0
 .el-radio__input
   display none
-.total 
+.total
   color #666
   float right
 .color-light

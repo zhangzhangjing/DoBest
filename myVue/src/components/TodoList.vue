@@ -10,7 +10,12 @@
       </el-col>
     </el-row>
     <ul>
-      <li-item v-for='( item ,index) of todoList' :key = "index" :index="index" :content = 'item' @delete="deleteitem">
+      <li-item
+        v-for='( item ,index) of todoList'
+        :key = "index"
+        :index="index"
+        :content = 'item'
+        @delete="deleteitem(index)">
       </li-item>
     </ul>
     <el-button type="primary" @click = "show = !show"> Toggle</el-button>
@@ -89,8 +94,8 @@ export default {
         this.content = ''
       }
     },
-    deleteitem: function () {
-      this.todoList.splice(this.item, 1)
+    deleteitem: function (item) {
+      this.todoList.splice(item, 1)
     },
     randomIndex: function () {
       return Math.floor(Math.random() * this.items.length)
@@ -122,7 +127,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="stylus">
 h1, h2 {
   font-weight: normal;
 }
@@ -150,10 +155,9 @@ a {
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .slide-fade-enter, .slide-fade-leave-to
-  /* .slide-fade-leave-active for below version 2.1.8 */ {
+  /* .slide-fade-leave-active for below version 2.1.8 */
   transform: translateX(10px);
   opacity: 0;
-}
 .bounce-enter-active {
   animation: bounce-in .5s;
 }
@@ -179,8 +183,13 @@ a {
   transition: all 1s;
 }
 .list-enter, .list-leave-to
-  /* .list-leave-active for below version 2.1.8 */ {
+  /* .list-leave-active for below version 2.1.8 */
   opacity: 0;
   transform: translateY(30px);
-}
+.hello
+  width 80%
+  height 500px
+  background #ffffff
+  margin 0 auto
+  padding 50px
 </style>

@@ -1,8 +1,6 @@
 <template>
     <div class="list">
-      <main-header></main-header>
       <worklist-content></worklist-content>
-      <main-footer></main-footer>
     </div>
 </template>
 

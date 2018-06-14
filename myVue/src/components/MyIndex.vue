@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <ul>
+    <ul class="content">
       <li>
         <a href="#/MyPath">登录页面</a>
       </li>
@@ -23,7 +22,6 @@ export default {
   name: 'MyIndex',
   data () {
     return {
-      msg: 'vue.js学习'
     }
   },
   methods: {
@@ -38,7 +36,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="stylus">
 h1, h2 {
   font-weight: normal;
 }
@@ -53,4 +51,10 @@ li {
 a {
   color: #42b983;
 }
+.content
+  height 500px
+  width 80%
+  background #ffffff
+  padding 20px
+  margin 0 auto
 </style>

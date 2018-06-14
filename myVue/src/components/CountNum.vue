@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="main-content hello">
     <p>{{msg}}</p>
     <input type="number" v-model="num"/>
     <button @click="clickme">点击累加</button>

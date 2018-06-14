@@ -9,7 +9,7 @@ export default {
   name: 'MainFooter',
   data () {
   	return {
-  		content: 'writed by zhangjing'
+  		content: 'written by zjingjing'
   	}
   }
 }
