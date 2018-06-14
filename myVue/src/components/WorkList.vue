@@ -1,8 +1,7 @@
 <template>
     <div class="list">
-      <main-header></main-header>
+      <main-header message="TodoList"></main-header>
       <worklist-content></worklist-content>
-      <main-footer></main-footer>
     </div>
 </template>
 

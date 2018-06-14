@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <ul>
+    <main-header message="首页"></main-header>
+    <ul class="content">
       <li>
         <a href="#/MyPath">登录页面</a>
       </li>
@@ -19,12 +19,15 @@
 </template>
 
 <script>
+import MainHeader from './header.vue'
 export default {
   name: 'MyIndex',
   data () {
     return {
-      msg: 'vue.js学习'
     }
+  },
+  components: {
+    MainHeader
   },
   methods: {
     routerIn: function () {
@@ -38,7 +41,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="stylus">
 h1, h2 {
   font-weight: normal;
 }
@@ -53,4 +56,10 @@ li {
 a {
   color: #42b983;
 }
+.content
+  height 500px
+  width 80%
+  background #ffffff
+  padding 20px
+  margin 0 auto
 </style>
