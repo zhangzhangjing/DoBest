@@ -106,7 +106,7 @@ export default {
 .form-group
   text-align left
   margin-top 15px
-  height 500px
+  height 400px
   overflow auto
 .flex
   display block
