@@ -1,6 +1,6 @@
 <template>
     <div class="main-header">
-      <el-button class="btn-return" icon="el-icon-arrow-left" circle @click="routerToIndex" v-show="returnBtn"></el-button>
+      <el-button class="btn-return" icon="el-icon-arrow-left" circle @click="routerToIndex" v-show="returnbtn"></el-button>
       <span>{{message}}</span>
     </div>
 </template>
@@ -8,11 +8,11 @@
 <script>
 export default {
   name: 'MainHeader',
-  props: ['message'],
+  props: ['message','returnbtn'],
   data () {
     return {
       myTitle: 'TodoList',
-      returnBtn: true
+      // returnBtn: true
     }
   },
   methods:{
@@ -24,7 +24,6 @@ export default {
     const urlstr = window.location.href
     const reg =/\/$/
     if(reg.test(urlstr)){
-      this.returnBtn = true
     }
   }
 }

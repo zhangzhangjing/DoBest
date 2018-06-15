@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main-header message="动画效果展示、组件的应用、v-for、computed的应用"></main-header>
+    <main-header message="动画效果展示、组件的应用、v-for、computed的应用"  returnbtn="true"></main-header>
     <div class="hello">
       <el-row>
         <el-col :span="16">

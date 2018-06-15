@@ -1,6 +1,6 @@
 <template>
   <div >
-    <main-header message="vuex"></main-header>
+    <main-header message="vuex"  returnbtn="true"></main-header>
     <div class="main-content hello">
       <el-input type="number" v-model="num" style="width: 40%;"/>
       <el-button @click="clickme">点击累加</el-button>
