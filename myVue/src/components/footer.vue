@@ -2,9 +2,9 @@
     <div class="footer-main">
       <div class="footer-content">
         <span id="help" style="float:left;">
-          <a href="" >帮助</a>
-          <a href="" >举报</a>
-          <a href="" >用户反馈</a>
+          <a href="#" >帮助</a>
+          <a href="#" >举报</a>
+          <a href="#" >用户反馈</a>
         </span>
           {{content}}
       </div>
