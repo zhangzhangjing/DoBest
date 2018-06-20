@@ -32,6 +32,7 @@ export default {
   font-size 18px
   color #666
   border-top 1px solid #ebebeb;
+  position fixed
 .footer-content
   width 80%
   margin 0 auto

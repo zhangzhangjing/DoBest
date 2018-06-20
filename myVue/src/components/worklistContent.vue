@@ -20,7 +20,7 @@
           :key="item.label"
           @change='selectLists(item.label)'
            border size="medium">{{item.content}}</el-radio>
-        <el-col :span='2' class='total'><span class='color-light'>{{total}}</span>条工作事项</el-col>
+        <el-col :span='4' class='total'><span class='color-light'>{{total}}</span>条工作事项</el-col>
       </div>
     </div>
 </template>
@@ -47,19 +47,19 @@ export default {
     addList(){
       var flag =0
       this.worklists.forEach(item =>{
-        if(item.content === String.trim(this.input)){
+        if(item.content === this.input.trim()){
           flag = 1
         }
       })
       if(flag == 1){
         return
       }
-      if(this.input == ''){
+      if(this.input.trim() == ''){
         return
       }
       var obj ={
         id:this.id ++,
-        content:String.trim(this.input),
+        content:this.input.trim(),
         iscompleted:false
       }
       this.worklists.unshift(obj)
@@ -118,6 +118,8 @@ export default {
 .total
   color #666
   float right
+  text-align right
+  font-size 13px
 .color-light
   color #d03438
   margin-right 5px
