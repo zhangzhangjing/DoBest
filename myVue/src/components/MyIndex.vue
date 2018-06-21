@@ -14,6 +14,9 @@
       <li>
         <a href="#/WorkList">工作计划列表</a>
       </li>
+      <li>
+        <a href="#/MacDetail">Mac</a>
+      </li>
     </ul>
   </div>
 </template>
