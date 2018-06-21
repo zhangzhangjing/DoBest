@@ -105,8 +105,8 @@ export default {
        currentMemory:'',
        currentCpu:'',
        currentPrice:'',
-       noMemory:[],
        noCpu:[],
+       noMemory:[],
        noProduct:false,
        canNotBuy:false,
        none:true,
@@ -193,14 +193,14 @@ export default {
       if(year == '2016版' && memory =='4G'){
         this.cpuHas = ['i5']
       }
-      if(year == '2016版' && memory =='8G'){
+      else if(year == '2016版' && memory =='8G'){
         this.cpuHas = ['i5']
       }
-      if(year == '2017版' && memory =='8G'){
-        this.cpuHas = ['i5','i7']
-      }
-      if(year == '2017版' && memory =='16G'){
+      else if(year == '2017版' && memory =='16G'){
         this.cpuHas = ['i7']
+      }
+      else if(year == '2017版' && memory =='8G'){
+        this.cpuHas = ['i5','i7']
       }
       //判断不相同的值
       var noCpu = [];
