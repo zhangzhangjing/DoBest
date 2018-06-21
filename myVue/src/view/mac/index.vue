@@ -37,7 +37,7 @@
                 <li class="li_item"
                     v-for="item in memoryAll"
                     v-bind:class="{ select: item==currentMemory,none: item == noMemory }">
-                  <span v-if="item==noMemory">{{item}}</span>
+                  <span v-if="item == noMemory">{{item}}</span>
                   <span class="span" @click="selectMemory(item)" v-else>{{item}}</span>
                 </li>
               </ul>
@@ -52,7 +52,7 @@
                 <li class="li_item"
                     v-for="item in cpuAll"
                     v-bind:class="{ select: item==currentCpu,none: item == noCpu }">
-                  <span v-if="item==noCpu">{{item}}</span>
+                  <span v-if="item == noCpu">{{item}}</span>
                   <span class="span" @click="selectCpu(item)" v-else>{{item}}</span>
                 </li>
               </ul>
@@ -129,13 +129,29 @@ export default {
       //选择版本年限，选中一个之后，默认选择当前版本的第一个型号电脑
       this.currentYear = item
       this.hasMemoryList(item)
+      this.currentMemory = this.memoryHas[0]
+      this.currentCpu = this.cpuHas[0]
     },
     selectMemory(item){
       this.currentMemory = item
       this.hasCpuList(this.currentYear,item)
     },
     selectCpu(item){
+      var that = this
       this.currentCpu = item
+      var productList = this.product.type
+      var flag = 0
+      productList.forEach(index =>{
+        if(index.year === that.currentYear && index.memory === that.currentMemory && index.cpu === item){
+          that.currentPrice = index.price
+          flag=1
+        }
+      })
+      if(flag == 1){
+        that.canNotBuy = false
+      }else{
+        that.canNotBuy = true
+      }
     },
     handleChange(value) {
       //选择商品的数量
@@ -174,16 +190,16 @@ export default {
     hasCpuList(year,memory){
       year = this.currentYear
       memory = this.currentMemory
-      if(year =='2016版' && memory =='4G'){
+      if(year == '2016版' && memory =='4G'){
         this.cpuHas = ['i5']
       }
-      if(year =='2016版' && memory =='8G'){
+      if(year == '2016版' && memory =='8G'){
         this.cpuHas = ['i5']
       }
-      if(year =='2017版' && memory =='8G'){
+      if(year == '2017版' && memory =='8G'){
         this.cpuHas = ['i5','i7']
       }
-      if(year =='2017版' && memory =='16G'){
+      if(year == '2017版' && memory =='16G'){
         this.cpuHas = ['i7']
       }
       //判断不相同的值
@@ -203,7 +219,7 @@ export default {
         }
       }
       this.noCpu = noCpu
-      console.log("没有的CPU   "+this.noCpu)
+      console.log("noCpu   "+this.noCpu)
 
     },
   }
