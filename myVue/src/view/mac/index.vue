@@ -23,8 +23,7 @@
                 <li class="li_item"
                     v-bind:class="{ select: item==currentYear,none: noProduct }"
                     v-for="item in typeAll"
-                    @click="selectYear(item)"
-                >{{item}}</li>
+                    @click="selectYear(item)">{{item}}</li>
               </ul>
             </div>
           </div>
@@ -50,10 +49,10 @@
             <div class="right-content">
               <ul class="ul_item">
                 <li class="li_item"
-                    v-for="item in cpuAll"
-                    v-bind:class="{ select: item==currentCpu,none: item == noCpu }">
-                  <span v-if="item == noCpu">{{item}}</span>
-                  <span class="span" @click="selectCpu(item)" v-else>{{item}}</span>
+                    v-for="item1 in cpuAll"
+                    v-bind:class="{ select: item1==currentCpu,none: item1 == noCpu }">
+                  <span v-if="item1 == noCpu">{{item1}}</span>
+                  <span class="span" @click="selectCpu(item1)" v-else>{{item1}}</span>
                 </li>
               </ul>
             </div>
