@@ -34,10 +34,13 @@
             <div class="right-content">
               <ul class="ul_item">
                 <li class="li_item"
-                    v-for="item in memoryAll"
-                    v-bind:class="{ select: item==currentMemory,none: item == noMemory }">
-                  <span v-if="item == noMemory">{{item}}</span>
-                  <span class="span" @click="selectMemory(item)" v-else>{{item}}</span>
+                    v-for="item in memoryHas"
+                    v-bind:class="{ select: item==currentMemory,none: item == noMemory }"
+                    @click="selectMemory(item)">
+                 {{item}}
+                </li>
+                <li class="li_item none"
+                    v-for="item in noMemory">{{item}}
                 </li>
               </ul>
             </div>
@@ -49,10 +52,12 @@
             <div class="right-content">
               <ul class="ul_item">
                 <li class="li_item"
-                    v-for="item1 in cpuAll"
-                    v-bind:class="{ select: item1==currentCpu,none: item1 == noCpu }">
-                  <span v-if="item1 == noCpu">{{item1}}</span>
-                  <span class="span" @click="selectCpu(item1)" v-else>{{item1}}</span>
+                    v-for="item1 in cpuHas"
+                    v-bind:class="{ select: item1==currentCpu,none: item1 == noCpu }"
+                    @click="selectCpu(item1)">
+                 {{item1}}</li>
+                <li  class="li_item none" v-for="key in noCpu">
+                  {{key}}
                 </li>
               </ul>
             </div>
@@ -107,7 +112,7 @@ export default {
        noCpu:[],
        noMemory:[],
        noProduct:false,
-       canNotBuy:false,
+       canNotBuy:true,
        none:true,
        num: 1
      }
@@ -118,6 +123,7 @@ export default {
     this.currentMemory = currentPro.memory
     this.currentCpu = currentPro.cpu
     this.currentPrice = currentPro.price
+    this.canNotBuy = false
   },
   mounted(){
     this.hasMemoryList('2016版')
@@ -128,12 +134,15 @@ export default {
       //选择版本年限，选中一个之后，默认选择当前版本的第一个型号电脑
       this.currentYear = item
       this.hasMemoryList(item)
-      this.currentMemory = this.memoryHas[0]
-      this.currentCpu = this.cpuHas[0]
+      this.currentMemory = ''
+      this.currentCpu = ''
+      this.canNotBuy = true
     },
     selectMemory(item){
       this.currentMemory = item
       this.hasCpuList(this.currentYear,item)
+      this.currentCpu = ''
+      this.canNotBuy = true
     },
     selectCpu(item){
       var that = this
@@ -185,6 +194,7 @@ export default {
         }
       }
       this.noMemory = result
+      console.log('noMemory    '+this.noMemory)
     },
     hasCpuList(year,memory){
       year = this.currentYear
@@ -219,7 +229,6 @@ export default {
       }
       this.noCpu = noCpu
       console.log("noCpu   "+this.noCpu)
-
     },
   }
 }
@@ -295,4 +304,5 @@ export default {
   border 1px solid #e3393c
 .ul_item .none
   border 1px dashed #ccc
+  cursor inherit
 </style>
