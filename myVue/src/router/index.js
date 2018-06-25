@@ -6,6 +6,7 @@ import TodoList from '@/components/TodoList'
 import CountNum from '@/components/CountNum'
 import WorkList from '@/components/WorkList'
 import MacDetail from '@/view/mac/index'
+import PersonalCenter from '@/view/person/index'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/macdetail',
       name: 'MacDetail',
       component: MacDetail
+    },
+    {
+      path: '/PersonalCenter',
+      name: 'PersonalCenter',
+      component: PersonalCenter
     }
   ]
 })

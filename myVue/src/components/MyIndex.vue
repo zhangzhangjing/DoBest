@@ -2,6 +2,7 @@
   <div class="hello">
     <main-header message="首页"></main-header>
     <ul class="content">
+      <tab :items="tabItems"  :content = 'tabItems' @on-click="clickItem"></tab>
       <li>
         <a href="#/MyPath">登录页面</a>
       </li>
@@ -17,20 +18,26 @@
       <li>
         <a href="#/MacDetail">Mac</a>
       </li>
+      <li>
+        <a href="#/PersonalCenter">个人中心</a>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 import MainHeader from './header.vue'
+import Tab from '@/components/tab.vue'
 export default {
   name: 'MyIndex',
   data () {
     return {
+      tabItems: ['选项一', '选项二','选项三', '选项四','选项五', '选项六'],
     }
   },
   components: {
-    MainHeader
+    MainHeader,
+    Tab,
   },
   methods: {
     routerIn: function () {
@@ -39,6 +46,9 @@ export default {
       } else {
         this.$router.push({path: '/MyPath'})
       }
+    },
+    clickItem:function (item) {
+      console.log(item)
     }
   }
 }
