@@ -23,7 +23,7 @@
           <span class="editicon" @click=editPersonDetail>修改</span>
         </div>
         <div class="content_tab">
-          <el-form ref="form" :model="personDetail1" label-width="80px">
+          <el-form :model="personDetail1" :rules="rules" ref="personDetail1" label-width="80px">
           <table width="80%">
             <tr>
               <td width="20%">性别：</td>
@@ -132,21 +132,6 @@ export default {
   },
   data(){
     return{
-      personDetail:{
-        '姓名':'薄荷凉',
-        '性别':'女',
-        '年龄':'18',
-        '生日':'1998-12-10',
-        '星座':'双子座',
-        '现居地':'中国-重庆',
-        '婚姻状况':'未婚',
-        '血型':'O型',
-        '故乡':'陕西-安康',
-        '职业':'互联网-前端工程师',
-        '公司名称':'重庆艾科有限公司',
-        '公司所在地':'重庆渝北区',
-        '详细地址':'重庆渝北区至尚路5号星光天地大厦3-2',
-      },
       personDetail1:{
         name:'薄荷凉',
         sex:'女',
@@ -162,6 +147,14 @@ export default {
         companyAddress:'重庆渝北区',
         companyDetailAddress:'重庆渝北区至尚路5号星光天地大厦3-2',
       },
+      rules:{
+        sex: [
+          { required: true, message: '请输入性别', trigger: 'blur' }
+        ],
+        age: [
+          {  type: 'number', required: true, message: '请输入年龄', trigger: 'blur' }
+        ],
+      },
       personList:{},
       name:'',
       userPic:'',
@@ -170,17 +163,12 @@ export default {
     }
   },
   created(){
-    this.name = this.personDetail.姓名
+
   },
   mounted(){
-    this.getUserDetail()
+
   },
   methods:{
-    getUserDetail:function () {
-      var list = this.personDetail
-      delete(list.姓名)
-      this.personList = list
-    },
     handleAvatarSuccess(res, file) {
       this.imageUrl = URL.createObjectURL(file.raw);
     },
@@ -200,8 +188,15 @@ export default {
       this.editing = true
     },
     onSubmit:function () {
-      console.log("保存成功")
-      this.editing = false
+      this.$refs['personDetail1'].validate((valid) => {
+        if (valid) {
+          this.$notify({ title: '成功', message: '保存成功！', type: 'success' })
+          this.editing = false
+        } else {
+          console.log('error submit!!', this.personDetail1);
+          return false;
+        }
+      });
     }
   }
 }

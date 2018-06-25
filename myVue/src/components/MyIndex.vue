@@ -10,7 +10,7 @@
         <a href="#" @click= 'routerIn'>todoList</a>
       </li>
       <li>
-        <a href="#/CountNum">点击累加效果</a>
+        <a href="#/CountNum">点击添加记录</a>
       </li>
       <li>
         <a href="#/WorkList">工作计划列表</a>
