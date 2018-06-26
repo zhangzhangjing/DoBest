@@ -29,84 +29,108 @@
               <td width="20%">性别：</td>
               <td>
                 <span  v-if="!editing">{{personDetail1.sex}}</span>
-                <input type="text" v-model="personDetail1.sex" v-if="editing" class="input_width">
+                <el-form-item prop="sex"  v-if="editing">
+                <input type="text" v-model="personDetail1.sex" class="input_width">
+                </el-form-item>
               </td>
             </tr>
             <tr>
               <td width="20%">年龄：</td>
               <td>
                 <span  v-if="!editing">{{personDetail1.age}}</span>
-                <input type="text" v-model="personDetail1.age" v-if="editing" class="input_width">
+                <el-form-item  prop="age"  v-if="editing">
+                <input type="text" v-model="personDetail1.age" class="input_width">
+                </el-form-item>
               </td>
             </tr>
             <tr>
               <td width="20%">生日：</td>
               <td>
                 <span  v-if="!editing">{{personDetail1.birthday}}</span>
-                <input type="text" v-model="personDetail1.birthday" v-if="editing" class="input_width">
+                <el-form-item prop="birthday"  v-if="editing">
+                <input type="text" v-model="personDetail1.birthday" class="input_width">
+                </el-form-item>
               </td>
             </tr>
             <tr>
               <td width="20%">星座：</td>
               <td>
                 <span  v-if="!editing">{{personDetail1.starName}}</span>
-                <input type="text" v-model="personDetail1.starName" v-if="editing" class="input_width">
+                <el-form-item prop="starName"  v-if="editing">
+                <input type="text" v-model="personDetail1.starName" class="input_width">
+                </el-form-item>
               </td>
             </tr>
             <tr>
               <td width="20%">现居地：</td>
               <td>
                 <span  v-if="!editing">{{personDetail1.address}}</span>
-                <input type="text" v-model="personDetail1.address" v-if="editing" class="input_width">
+                <el-form-item prop="address"  v-if="editing">
+                <input type="text" v-model="personDetail1.address" class="input_width">
+                </el-form-item>
               </td>
             </tr>
             <tr>
               <td width="20%">婚姻状况：</td>
               <td>
                 <span  v-if="!editing">{{personDetail1.merry}}</span>
-                <input type="text" v-model="personDetail1.merry" v-if="editing" class="input_width">
+                <el-form-item prop="merry"  v-if="editing">
+                <input type="text" v-model="personDetail1.merry" class="input_width">
+                </el-form-item>
               </td>
             </tr>
             <tr>
               <td width="20%">血型：</td>
               <td>
                 <span  v-if="!editing">{{personDetail1.blood}}</span>
-                <input type="text" v-model="personDetail1.blood" v-if="editing" class="input_width">
+                <el-form-item prop="blood"  v-if="editing">
+                <input type="text" v-model="personDetail1.blood" class="input_width">
+                </el-form-item>
               </td>
             </tr>
             <tr>
               <td width="20%">故乡：</td>
               <td>
                 <span  v-if="!editing">{{personDetail1.homeAddress}}</span>
-                <input type="text" v-model="personDetail1.homeAddress" v-if="editing" class="input_width">
+                <el-form-item prop="homeAddress"  v-if="editing">
+                <input type="text" v-model="personDetail1.homeAddress" class="input_width">
+                </el-form-item>
               </td>
             </tr>
             <tr>
               <td width="20%">职业：</td>
               <td>
                 <span  v-if="!editing">{{personDetail1.jobName}}</span>
-                <input type="text" v-model="personDetail1.jobName" v-if="editing" class="input_width">
+                <el-form-item prop="jobName"  v-if="editing">
+                <input type="text" v-model="personDetail1.jobName" class="input_width">
+                </el-form-item>
               </td>
             </tr>
             <tr>
               <td width="20%">公司名称：</td>
               <td>
                 <span  v-if="!editing">{{personDetail1.companyName}}</span>
-                <input type="text" v-model="personDetail1.companyName" v-if="editing" class="input_width">
+                <el-form-item prop="companyName"  v-if="editing">
+                <input type="text" v-model="personDetail1.companyName" class="input_width">
+                </el-form-item>
               </td>
             </tr>
             <tr>
               <td width="20%">公司所在地：</td>
               <td>
                 <span  v-if="!editing">{{personDetail1.companyAddress}}</span>
-                <input type="text" v-model="personDetail1.companyAddress" v-if="editing" class="input_width">
+                <el-form-item prop="companyAddress"  v-if="editing">
+                <input type="text" v-model="personDetail1.companyAddress" class="input_width">
+                </el-form-item>
               </td>
             </tr>
             <tr>
               <td width="20%">详细地址：</td>
               <td>
                 <span  v-if="!editing">{{personDetail1.companyDetailAddress}}</span>
-                <input type="text" v-model="personDetail1.companyDetailAddress" v-if="editing" class="input_width">
+                <el-form-item prop="companyDetailAddress"  v-if="editing">
+                <input type="text" v-model="personDetail1.companyDetailAddress" class="input_width">
+                </el-form-item>
               </td>
             </tr>
             <tr>
@@ -152,7 +176,37 @@ export default {
           { required: true, message: '请输入性别', trigger: 'blur' }
         ],
         age: [
-          {  type: 'number', required: true, message: '请输入年龄', trigger: 'blur' }
+          { required: true, message: '请输入年龄', trigger: 'blur' }
+        ],
+        birthday: [
+          { required: true, message: '请输入生日', trigger: 'blur' }
+        ],
+        starName: [
+          { required: true, message: '请输入星座', trigger: 'blur' }
+        ],
+        address: [
+          { required: true, message: '请输入住址', trigger: 'blur' }
+        ],
+        merry: [
+          { required: true, message: '请输入婚姻状况', trigger: 'blur' }
+        ],
+        blood: [
+          { required: true, message: '请输入血型', trigger: 'blur' }
+        ],
+        homeAddress: [
+          { required: true, message: '请输入出生地址', trigger: 'blur' }
+        ],
+        jobName: [
+          { required: true, message: '请输入职务', trigger: 'blur' }
+        ],
+        companyName: [
+          { required: true, message: '请输入公司名称', trigger: 'blur' }
+        ],
+        companyAddress: [
+          { required: true, message: '请输入公司地址', trigger: 'blur' }
+        ],
+        companyDetailAddress: [
+          { required: true, message: '请输入公司详细地址', trigger: 'blur' }
         ],
       },
       personList:{},
@@ -203,6 +257,13 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+.el-form-item
+  margin-bottom 0
+  margin-left 0
+.el-form-item .el-form-item__content
+  line-height inherit
+.el-form-item .el-form-item__error
+  padding-top 0
 .left_per
   position relative
   display inline-block
