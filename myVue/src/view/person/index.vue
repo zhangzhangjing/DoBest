@@ -17,7 +17,7 @@
         <p class="title_per" @click="">修改头像</p>
       </div>
       <div class="right_per">
-        <div class="name">{{name}}</div>
+        <div class="name">{{personDetail1.name}}</div>
         <div class="right_title">
           <span>基本资料</span>
           <span class="editicon" @click=editPersonDetail>修改</span>
@@ -136,7 +136,7 @@
             <tr>
               <td colspan="2" style="text-align: center">
                 <el-button v-if="editing" size="mini" type="warning" @click="onSubmit">保存</el-button>
-                <el-button v-if="editing" size="mini" @click="editing=!editing">取消</el-button>
+                <el-button v-if="editing" size="mini" @click="closeBtn">取消</el-button>
               </td>
             </tr>
           </table>
@@ -156,6 +156,7 @@ export default {
   },
   data(){
     return{
+      perDetail:{},
       personDetail1:{
         name:'薄荷凉',
         sex:'女',
@@ -217,10 +218,10 @@ export default {
     }
   },
   created(){
-
+    this.perDetail = this.personDetail1
   },
   mounted(){
-
+    this.perDetail = this.personDetail1
   },
   methods:{
     handleAvatarSuccess(res, file) {
@@ -251,6 +252,10 @@ export default {
           return false;
         }
       });
+    },
+    closeBtn:function () {
+      this.editing = false
+      this.$refs['personDetail1'].resetFields();
     }
   }
 }
