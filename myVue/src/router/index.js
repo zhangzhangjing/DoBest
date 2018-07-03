@@ -7,6 +7,7 @@ import CountNum from '@/components/CountNum'
 import WorkList from '@/components/WorkList'
 import MacDetail from '@/view/mac/index'
 import PersonalCenter from '@/view/person/index'
+import ReactStudy from '@/view/react/index'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/PersonalCenter',
       name: 'PersonalCenter',
       component: PersonalCenter
+    },
+    {
+      path: '/ReactStudy',
+      name: 'ReactStudy',
+      component: ReactStudy
     }
   ]
 })

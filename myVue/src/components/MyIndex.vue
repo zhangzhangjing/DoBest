@@ -21,6 +21,9 @@
       <li>
         <a href="#/PersonalCenter">个人中心</a>
       </li>
+      <li>
+        <a href="#/ReactStudy">React学习</a>
+      </li>
     </ul>
   </div>
 </template>
