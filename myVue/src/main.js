@@ -13,7 +13,12 @@ Vue.use(Vuex)
 const module = {
   state: {
     count: 0,
-    tableData:[],
+    tableData:[
+      { id: 1,
+        date: 1,
+        wage:1,
+        total: 1}
+    ],
   },
   mutations
 }
@@ -23,5 +28,13 @@ new Vue({
   router,
   store,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  mounted(){
+
+  },
+  data(){
+    return{
+
+    }
+  }
 })
