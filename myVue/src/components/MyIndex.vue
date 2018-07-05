@@ -22,7 +22,7 @@
         <a href="#/PersonalCenter">个人中心</a>
       </li>
       <li>
-        <a href="#/ReactStudy">React学习</a>
+        <a href="#/ReactStudy">视频看点</a>
       </li>
     </ul>
   </div>
