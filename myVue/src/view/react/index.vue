@@ -13,6 +13,8 @@
                    @statechanged="playerStateChanged($event)"
                    @ended="onPlayerEnded($event)"
     ></video-player>
+
+    <el-button  class="btn" @click="getMsgAjax">点击</el-button>
   </div>
 </div>
 </template>
@@ -20,7 +22,7 @@
 <script>
   import MainHeader from '@/components/header.vue'
   import { videoPlayer } from 'vue-video-player'
-  import React from 'react'
+  import api from '@/fun/api.js'
     export default {
       name: "index",
       components: {
@@ -52,7 +54,8 @@
               remainingTimeDisplay: false,
               fullscreenToggle: true
             },
-          }
+          },
+          page: 1
         }
       },
       methods:{
@@ -78,13 +81,21 @@
           // console.log(playerCurrentState)
           // var stopTime = playerCurrentState.timeupdate
           // sessionStorage.setItem("stopTime",stopTime);
-
         },
         onPlayerEnded(player){
 
         },
         progressTouchEnd(player){
           console.log(player)
+        },
+        getMsgAjax(){
+          /*
+          api.getListMsg(this.page).then(response =>{
+            console.log(response)
+          }).catch(error =>{
+            console.log(response)
+          })
+          */
         }
       },
       computed:{
@@ -99,10 +110,14 @@
     }
 </script>
 
-<style scoped>
-  .video-player{
+<style scoped lang="stylus">
+.video-player
     width: 50%;
     height: 80%;
-  }
+.btn
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
 
 </style>
