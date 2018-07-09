@@ -1,25 +1,28 @@
 var $ = require("jquery");
 var publicPath = '';
 
-import {createRequestPromise} from './api_base'
+// import {createRequestPromise} from './api_base'
+var createRequestPromise =  require('./api_base.js')
 
 
-// var exports = {
-//   init:function(publicPath) {
-//     publicPath = publicPath;
-//   },
-//   getListMsg:function(page){
-//     var url = publicPath + ""
-//     return createRequestPromise({
-//     url: url,
-//     method:"GET",
-//     data:{index:page}
-//   });
-//   },
-// }
-//
-//
-// module.exports = exports
+var exports = {
+  init:function(publicPath) {
+    publicPath = publicPath;
+  },
+  getListMsg:function(){
+  //   var url = publicPath + ""
+  //   return createRequestPromise({
+  //   url: url,
+  //   method:"GET",
+  //   data:{index:page}
+  // });
+    console.log("调用了module.exports内容！")
+    alert("点击了！")
+  },
+}
+
+
+module.exports = exports
 
 
 // console.log('b 开始');

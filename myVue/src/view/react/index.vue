@@ -22,7 +22,7 @@
 <script>
   import MainHeader from '@/components/header.vue'
   import { videoPlayer } from 'vue-video-player'
-  import api from '@/fun/api.js'
+  import cts from '@/fun/cts.js'
     export default {
       name: "index",
       components: {
@@ -89,13 +89,7 @@
           console.log(player)
         },
         getMsgAjax(){
-          /*
-          api.getListMsg(this.page).then(response =>{
-            console.log(response)
-          }).catch(error =>{
-            console.log(response)
-          })
-          */
+          cts.getListMsg()
         }
       },
       computed:{
