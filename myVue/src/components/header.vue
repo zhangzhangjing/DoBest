@@ -33,10 +33,11 @@ export default {
 .main-header
   position relative
   text-align center
-  font-size 40px
-  color #D03438
+  color #475669
+  font-size 20px
   height 80px
   line-height 80px
+  font-weight bold
 .btn-return
   position absolute
   left 10%
