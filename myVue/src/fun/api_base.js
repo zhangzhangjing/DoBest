@@ -2,7 +2,6 @@
 var $ = require("jquery");
 import {Promise} from 'core-js';
 
-
 // 每页条数
 export const CountPerPage = 10;
 
@@ -27,7 +26,7 @@ export function createRequestPromise(options)
 	}
 
 	return new Promise(function(resolve, reject){
-		$.ajax({
+    $.ajax({
 		    url: options.url,
 		    method:options.method || "POST",
 		    data: options.data || {},
