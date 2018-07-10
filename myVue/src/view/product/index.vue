@@ -76,7 +76,6 @@
   import MainHeader from '@/components/header.vue'
   import cts from '@/fun/cts.js'
   import {Promise} from 'core-js';
-  import axios from 'axios';
   export default {
     name: "index",
     components: {
@@ -108,15 +107,30 @@
       },
       getMsg(){
         this.listLoading1 = true;
-        axios.get( 'http://192.168.2.118:8888/cts/cts/ti_product/getTiproductsByPage?isAll=1&index=1&size=10',
-          {headers: {'ticket':'YYc687579f-de31-4155-ad4c-f811c6cd7817'} }).then((response) => {
-            this.tableData1 = response.data.BaseModle.list || [];
-            this.listLoading1 = false;
+        // axios.get( 'http://192.168.2.118:8888/cts/cts/ti_product/getTiproductsByPage?isAll=1&index=1&size=10',
+        //   {headers: {'ticket':'YYc687579f-de31-4155-ad4c-f811c6cd7817'} }).then((response) => {
+        //     this.tableData1 = response.data.BaseModle.list || [];
+        //     this.listLoading1 = false;
+        //   }
+        // ).catch((err) => {
+        //     console.log(err);
+        //   }
+        // );
+        this.$ajax({
+          method: 'get',
+          url: 'http://192.168.2.118:8888/cts/cts/ti_product/getTiproductsByPage',
+          data: {
+            isAll:1,
+            index:1,
+            size:10
           }
-        ).catch((err) => {
-            console.log(err);
-          }
-        );
+        }).then(function(res){
+          this.tableData1 = res.data.BaseModle.list || [];
+          this.listLoading1 = false;
+        })
+          .catch(function(err){
+            console.log(err)
+          })
       }
     },
     mounted(){

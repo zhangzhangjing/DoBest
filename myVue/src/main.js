@@ -21,7 +21,7 @@ Vue.use(Vuex)
 // })
 Vue.use(VideoPlayer)
 // Vue.use(axios)
-
+Vue.prototype.$ajax=axios
 const module = {
   state: {
     count: 0,
