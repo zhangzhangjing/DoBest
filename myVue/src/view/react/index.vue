@@ -20,9 +20,11 @@
 </template>
 
 <script>
+  var $ = require("jquery");
   import MainHeader from '@/components/header.vue'
   import { videoPlayer } from 'vue-video-player'
   import cts from '@/fun/cts.js'
+  import {Promise} from 'core-js';
     export default {
       name: "index",
       components: {
@@ -89,7 +91,13 @@
           console.log(player)
         },
         getMsgAjax(){
-          cts.getListMsg()
+          cts.getListMsg().then((response) => {
+            var list = response.list || [];
+            console.log(list)
+          }).catch(error =>{
+            console.log(error)
+          })
+
         }
       },
       computed:{
@@ -98,7 +106,7 @@
         }
       },
       destroyed: function () {
-        console.log("我已经离开了！");
+        // console.log("我已经离开了！");
       },
 
     }

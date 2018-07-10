@@ -24,6 +24,9 @@
       <li>
         <a href="#/ReactStudy">视频看点</a>
       </li>
+      <li>
+        <a href="#/Product">产品管理</a>
+      </li>
     </ul>
   </div>
 </template>

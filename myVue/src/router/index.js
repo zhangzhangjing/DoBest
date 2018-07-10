@@ -8,6 +8,7 @@ import WorkList from '@/components/WorkList'
 import MacDetail from '@/view/mac/index'
 import PersonalCenter from '@/view/person/index'
 import ReactStudy from '@/view/react/index'
+import Product from '@/view/product/index'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/ReactStudy',
       name: 'ReactStudy',
       component: ReactStudy
+    },
+    {
+      path: '/Product',
+      name: 'Product',
+      component: Product
     }
   ]
 })

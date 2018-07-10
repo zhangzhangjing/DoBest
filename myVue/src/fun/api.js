@@ -16,16 +16,6 @@ module.exports = {
   init:init,
 }
 
-
-
-
-// console.log('a 开始');
-// exports.done = false;
-// const b = require('./cts.js');
-// console.log('在 a 中，b.done = %j', b.done);
-// exports.done = true;
-// console.log('a 结束');
-
 var app = {
   name: 'jingjing',
   version: '1.0.0',

@@ -1,49 +1,54 @@
 
 var $ = require("jquery");
+import {Promise} from 'core-js';
 
-//每页条数
-// export const CountPerPage = 10;
-//
-// export function successDefaultPromise(data){
-// 	return new Promise(function(resolve, reject){resolve(data || {})});
-// }
-//
-// export function failDefaultPromise(){
-// 	return new Promise(function(resolve, reject){reject({code:0, message:''})});
-// }
-//
-// export function createRequestPromise(options)
-// {
-// 	if (!(options && options.url))
-// 	{
-// 		return failDefaultPromise();
-// 	}
-//
-// 	var headers = {'ticket':getToken()};
-// 	if(options.headers){
-// 		headers = Object.assign({}, headers, options.headers);
-// 	}
-//
-// 	return new Promise(function(resolve, reject){
-// 		$.ajax({
-// 		    url: options.url,
-// 		    method:options.method || "POST",
-// 		    data: options.data || {},
-// 		    headers: headers,
-// 		    dataType: 'json',
-// 		    xhrFields: { withCredentials: true },
-// 		    crossDomain: true,
-// 		    success: function( response ) {
-// 		    	responseBaseHandler(response, data => { resolve(data); }, error => { reject(error); })
-// 		    },
-// 		    error:function(error){ reject(error); }
-// 		});
-// 	});
-// }
-//
-// function getToken(){
-// 	return sessionStorage.getItem('ticket') || localStorage.getItem("ticket");
-// }
+
+// 每页条数
+export const CountPerPage = 10;
+
+export function successDefaultPromise(data){
+	return new Promise(function(resolve, reject){resolve(data || {})});
+}
+
+export function failDefaultPromise(){
+	return new Promise(function(resolve, reject){reject({code:0, message:''})});
+}
+
+export function createRequestPromise(options)
+{
+	if (!(options && options.url))
+	{
+		return failDefaultPromise();
+	}
+
+	// var headers = {'ticket':getToken()};
+	if(options.headers){
+		// headers = Object.assign({}, headers, options.headers);
+	}
+
+	return new Promise(function(resolve, reject){
+		$.ajax({
+		    url: options.url,
+		    method:options.method || "POST",
+		    data: options.data || {},
+		    headers: {'ticket':'YYc687579f-de31-4155-ad4c-f811c6cd7817'},
+		    dataType: 'json',
+		    xhrFields: { withCredentials: true },
+		    crossDomain: true,
+		    success: function( response ) {
+		    	responseBaseHandler(response, data => { resolve(data); }, error => { reject(error); })
+		    },
+		    error:function(error){
+          console.log("出错了！")
+		      reject(error);
+		    }
+		});
+	});
+}
+
+function getToken(){
+	return sessionStorage.getItem('ticket') || localStorage.getItem("ticket");
+}
 
 function responseBaseHandler(response, successCallback, failCallback)
 {
@@ -58,7 +63,8 @@ function responseBaseHandler(response, successCallback, failCallback)
         }
         else if (status == "-1")
         {
-        	WxNotificationCenter.postNotificationName("TokenInvalid");
+          errorCode = status;
+        	// WxNotificationCenter.postNotificationName("TokenInvalid");
         }
         else{
             errorCode = status;

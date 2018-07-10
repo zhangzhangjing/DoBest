@@ -1,36 +1,30 @@
 var $ = require("jquery");
-var publicPath = '';
+var publicPath = 'http://192.168.2.118:8888';
 
 // import {createRequestPromise} from './api_base'
-var createRequestPromise =  require('./api_base.js')
+// var createRequestPromise =  require('./api_base.js')
+var api_b =  require('./api_base.js')
 
 
 var exports = {
   init:function(publicPath) {
     publicPath = publicPath;
   },
-  getListMsg:function(){
-  //   var url = publicPath + ""
-  //   return createRequestPromise({
-  //   url: url,
-  //   method:"GET",
-  //   data:{index:page}
-  // });
-    console.log("调用了module.exports内容！")
-    alert("点击了！")
+  //获取产品列表
+  getProductList:function(){
+    var url = publicPath + "/cts/cts/ti_product/getTiproductsByPage"
+    return api_b.createRequestPromise({
+      url:url,
+      headers:"11",
+      method:"GET",
+      data:{isAll:1, index:1, size:10}
+    })
+
   },
 }
 
 
+
+
 module.exports = exports
 
-
-// console.log('b 开始');
-// exports.done = false;
-// const app = require('./api.js');
-// console.log('在 b 中，a.done = %j', a.done);
-// exports.done = true;
-// console.log('b 结束');
-
-// var app = require('./api.js');
-// app.sayName('hello');//hello
