@@ -1,7 +1,10 @@
 <template>
   <div class="hello">
     <main-header message="首页"></main-header>
-    <ul class="content">
+    <div class="bgfixed">
+      <div class="meng"></div>
+    </div>
+    <ul class="content" style="display: none">
       <tab :items="tabItems"  :content = 'tabItems' @on-click="clickItem"></tab>
       <li>
         <a href="#/MyPath">登录页面</a>
@@ -81,4 +84,27 @@ a {
   background #ffffff
   padding 20px
   margin 0 auto
+.bgfixed
+  position relative
+  text-align center
+  min-height 80px
+  height 600px
+  color: #313131;
+  font-size 14px
+  font-weight normal
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  background-image: url(https://demo.themeisle.com/azera-shop/wp-content/themes/azera-shop/images/background-images/background.jpg);
+  display block
+  box-sizing: inherit;
+.meng
+  background: rgba(0, 0, 0, 0.1);
+  position relative
+  height 600px
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  display block
+  box-sizing: inherit;
 </style>

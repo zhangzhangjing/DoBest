@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img id="bg_img" class="curBg" v-if="show" :src="imgSrc" style="width: 100%;height: 100%">
+    <!--<img id="bg_img" class="curBg" v-if="show" :src="imgSrc" style="width: 100%;height: 100%">-->
     <div class="coverbg" v-show="!show">
       <p class="tips">网页加载中，请耐心等候……</p>
       <img class="loading" src="http://www.86y.org/images/loading.gif"/>
