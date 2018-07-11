@@ -196,4 +196,5 @@ a {
   background #ffffff
   margin 0 auto
   padding 50px
+  margin-top 80px
 </style>

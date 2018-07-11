@@ -103,6 +103,7 @@ export default {
   min-height 500px
   margin 0 auto
   background #fff
+  margin-top 80px
 .form-group
   text-align left
   margin-top 15px

@@ -2,6 +2,27 @@
   <div  class="list">
     <main-header message="产品管理" returnbtn="true"></main-header>
     <div class="main-content">
+      <el-row>
+        <el-col :span="5" v-for="(item, index) in product" :key="item" :offset="index%4==0 ? 0 : 1">
+          <el-card :body-style="{ padding: '0px' }" class="card" style="">
+            <img src="../../images/pic/dangao.jpg" class="image">
+            <div style="padding: 18px;">
+              <div class="bottom clearfix">
+                <span>{{item.name}}</span>
+                <el-row class="price">￥{{item.price}}</el-row>
+              </div>
+            </div>
+            <div class="meng">
+              <div class="item_title">{{item.name}}</div>
+              <div class="jieshao"><p>{{item.productDes}}</p></div>
+              <div class="priceh">￥{{item.price}}</div>
+              <div class="view_btn1">
+                <button class="view_btn">了解详情</button>
+              </div>
+            </div>
+          </el-card>
+        </el-col>
+      </el-row>
       <template>
         <el-table  border  style="width: 100%;margin-top: 20px;"
           :data="tableData"
@@ -89,6 +110,71 @@
         tableData1:[],
         listLoading: false,
         listLoading1: false,
+        product: [
+          {
+            id:0,
+            name:"慕斯小蛋糕",
+            productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
+            price:16.66,
+            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+          },
+          {
+            id:0,
+            name:"芒果蛋糕",
+            productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
+            price:12.88,
+            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+          },
+          {
+            id:0,
+            name:"美味蛋挞",
+            productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
+            price:29.99,
+            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+          },
+          {
+            id:0,
+            name:"草莓新地",
+            productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
+            price:18.88,
+            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+          },
+          {
+            id:0,
+            name:"美味蛋挞",
+            productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
+            price:16.66,
+            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+          },
+          {
+            id:0,
+            name:"慕斯小蛋糕",
+            productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
+            price:16.66,
+            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+          },
+          {
+            id:0,
+            name:"慕斯小蛋糕",
+            productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
+            price:16.66,
+            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+          },
+          {
+            id:0,
+            name:"慕斯小蛋糕",
+            productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
+            price:16.66,
+            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+          },
+          {
+            id:0,
+            name:"慕斯小蛋糕",
+            productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
+            price:16.66,
+            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+          }
+        ]
       }
     },
     methods:{
@@ -141,6 +227,89 @@
 </script>
 
 <style scoped lang="stylus">
+
+  .main-content
+    text-align left
+  .time {
+    font-size: 13px;
+    color: #999;
+  }
+  .bottom {
+    margin-top: 13px;
+    line-height: 12px;
+  }
+.card
+  margin-bottom: 20px;
+  position: relative;
+
+  .price {
+    padding: 0;
+    float: right;
+    color #ffa200
+  }
+
+  .image {
+    width: 100%;
+    display: block;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+
+  .clearfix:after {
+    clear: both
+  }
+.meng
+  position absolute
+  width 100%
+  left 0
+  top 100%
+  /*bottom 100%*/
+  background rgba(255, 255, 255, 0.9)
+  text-align center
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+.card :hover .meng
+  top 0
+  bottom 0
+  background rgba(255, 255, 255, 0.9)
+.item_title
+  color #ffa200
+  font-size 20px
+  margin-top 30px
+.jieshao
+  width 80%
+  height 200px
+  margin 0 auto
+  line-height 24px
+  font-size 14px
+.priceh
+  width 80%
+  margin 0 auto
+  font-size 16px
+  color #454545
+  text-align right
+.view_btn1
+  width 100%
+  position absolute
+  bottom 15px
+  text-align center
+.view_btn
+  background #ffa200
+  padding: 6px 20px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  webkit-box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.3);
+  cursor pointer
+  margin 0 auto
 
 
 </style>

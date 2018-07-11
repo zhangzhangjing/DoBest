@@ -14,7 +14,6 @@
                    @ended="onPlayerEnded($event)"
     ></video-player>
 
-    <el-button  class="btn" @click="getMsgAjax">点击</el-button>
   </div>
 </div>
 </template>
