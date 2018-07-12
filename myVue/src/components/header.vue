@@ -14,12 +14,11 @@
               <ul class="ul_item">
                 <li><a href="" @click="routerToIndex">网站首页</a></li>
                 <li><a href="#/Product">产品管理</a></li>
-                <li><a href="#/MyPath">登录</a></li>
-                <li><a href="#/MacDetail">Mac</a></li>
                 <li><a href="#/CountNum">财务明细</a></li>
                 <li><a href="#/WorkList">工作流</a></li>
                 <li><a href="#/ReactStudy">视频看点</a></li>
                 <li><a href="#/PersonalCenter">个人中心</a></li>
+                <li><a href="#/MyPath">登录</a></li>
               </ul>
             </div>
           </div>

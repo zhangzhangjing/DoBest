@@ -1,7 +1,7 @@
 <template>
   <div>
     <main-header message="" returnbtn="true"></main-header>
-    <el-form label-position="left" label-width="0px" class="demo-ruleForm login-container">
+    <el-form label-position="left" label-width="0px"  fill="#ffa200" class="demo-ruleForm login-container">
       <h3 class="title">系统登录</h3>
       <el-form-item prop="phone">
         <el-input type="text" v-model="phone" auto-complete="off" placeholder="手机号/咿呀号"></el-input>
@@ -9,7 +9,7 @@
       <el-form-item prop="password">
         <el-input type="password" v-model="password" auto-complete="off" placeholder="密码"></el-input>
       </el-form-item>
-      <el-checkbox v-model="checked" checked class="remember">记住密码</el-checkbox>
+      <el-checkbox v-model="checked"  fill="#ffa200" class="remember">记住密码</el-checkbox>
       <el-button type="text" @click="resetBtnTapped" style="float:right;">忘记密码?</el-button>
       <el-form-item style="width:100%;">
         <el-button type="primary" style="width:100%;" @click="handleSubmit2">登录</el-button>

@@ -69,12 +69,34 @@
               <el-input-number v-model="num" @change="handleChange" :min="1" :max="10" style="width: 120px;"></el-input-number>
             </div>
             <div class="flex m_l_20">
+              <el-button type="warning" :disabled="canNotBuy">加入购物车</el-button>
               <el-button type="danger" :disabled="canNotBuy" @click="btnBuy()">立即购买</el-button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="sectionPro">
+      <div class="titles">
+        <div class="title_item"
+            v-for="item in selectItem"
+            v-bind:class="{ select: item==currentItem }"
+            @click="selectItembtn(item)">
+          {{item}}</div>
+      </div>
+      <div class="titler">
+        <div class="h1">产品详情</div>
+        <div class="content11">你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。
+        </div>
+        <div class="imgList">
+          <img src="../../images/pic/cha.jpg" class="" alt="">
+          <img src="../../images/pic/dangao.jpg" class="" alt="">
+          <img src="../../images/pic/2.jpg" class="" alt="">
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </template>
 
@@ -114,7 +136,10 @@ export default {
        noProduct:false,
        canNotBuy:true,
        none:true,
-       num: 1
+       num: 1,
+       select:true,
+       selectItem:['产品详情','产品评价'],
+       currentItem:'产品详情'
      }
   },
   created:function () {
@@ -230,6 +255,9 @@ export default {
       this.noCpu = noCpu
       console.log("noCpu   "+this.noCpu)
     },
+    selectItembtn(item){
+      this.currentItem = item
+    }
   }
 }
 </script>
@@ -305,4 +333,49 @@ export default {
 .ul_item .none
   border 1px dashed #ccc
   cursor inherit
+.sectionPro
+  width 80%
+  margin 0 auto
+.titles
+  width 100%
+  display block
+  text-align left
+  border-bottom 1px solid #dadfe3
+.title_item
+  height 50px
+  line-height 50px
+  padding 0 30px
+  display inline-block
+  color #6b6a6b
+  font-size 18px
+  font-weight normal
+  cursor pointer
+.select
+  border-bottom 2px solid rgba(255,162,0,1.00)
+  color rgba(255,162,0,1.00)
+.titler
+  width 100%
+  text-align left
+  padding-top 30px
+.h1:after
+  display: block;
+  width: 80px;
+  height: 2px;
+  margin-top: 10px;
+  background: #ececec;
+  content: "";
+.content11
+  margin-top 20px
+  font-size 14px
+  line-height 26px
+  margin-bottom 20px
+.imgList
+  width 100%
+  text-align center
+  display block
+  margin-top 30px
+.imgList img
+  display block
+  margin 20px auto
+  max-width 80%
 </style>

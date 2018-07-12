@@ -17,7 +17,7 @@
               <div class="jieshao"><p>{{item.productDes}}</p></div>
               <div class="priceh">￥{{item.price}}</div>
               <div class="view_btn1">
-                <button class="view_btn">了解详情</button>
+                <button class="view_btn" @click="productDetail(item.proId)">了解详情</button>
               </div>
             </div>
           </el-card>
@@ -113,6 +113,7 @@
         product: [
           {
             id:0,
+            proId:201801,
             name:"慕斯小蛋糕",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:16.66,
@@ -120,6 +121,7 @@
           },
           {
             id:0,
+            proId:2018012,
             name:"芒果蛋糕",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:12.88,
@@ -127,6 +129,7 @@
           },
           {
             id:0,
+            proId:2018201,
             name:"美味蛋挞",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:29.99,
@@ -134,6 +137,7 @@
           },
           {
             id:0,
+            proId:201851,
             name:"草莓新地",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:18.88,
@@ -141,6 +145,7 @@
           },
           {
             id:0,
+            proId:201806,
             name:"美味蛋挞",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:16.66,
@@ -148,6 +153,7 @@
           },
           {
             id:0,
+            proId:202801,
             name:"慕斯小蛋糕",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:16.66,
@@ -155,6 +161,7 @@
           },
           {
             id:0,
+            proId:221801,
             name:"慕斯小蛋糕",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:16.66,
@@ -162,6 +169,7 @@
           },
           {
             id:0,
+            proId:301801,
             name:"慕斯小蛋糕",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:16.66,
@@ -169,6 +177,7 @@
           },
           {
             id:0,
+            proId:201809,
             name:"慕斯小蛋糕",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:16.66,
@@ -217,6 +226,9 @@
           .catch(function(err){
             console.log(err)
           })
+      },
+      productDetail(id){
+        this.$router.push({path: '/MacDetail', query: { pid:id}})
       }
     },
     mounted(){
