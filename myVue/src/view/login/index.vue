@@ -85,8 +85,8 @@
     -moz-border-radius: 5px;
     background-clip: padding-box;
     margin-bottom: 20px;
-    background-color: #f9fafc;
-    margin: 180px auto;
+    background-color: #fff;
+    margin: 100px auto;
     width: 350px;
     padding: 35px 35px 15px;
   }
