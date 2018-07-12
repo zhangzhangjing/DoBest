@@ -18,7 +18,8 @@
                 <li><a href="#/WorkList">工作流</a></li>
                 <li><a href="#/ReactStudy">视频看点</a></li>
                 <li><a href="#/PersonalCenter">个人中心</a></li>
-                <li><a href="#/MyPath">登录</a></li>
+                <li><a href="#/Login">登录</a></li>
+                <li><a href="#/Register">注册</a></li>
               </ul>
             </div>
           </div>

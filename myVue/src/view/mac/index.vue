@@ -3,10 +3,10 @@
     <main-header message="MacBook Detail" returnbtn="true"></main-header>
     <div class="main-content hello">
       <div class="piccontent">
-        <img src="../../images/mac/macbook.jpg" alt="商品图片">
+        <img v-bind:src="product.picture" alt="商品图片">
       </div>
       <div class="detailcontent">
-        <div class="title">Apple MacBook Air 13.3英寸笔记本电脑 银色 {{product.name}}</div>
+        <div class="title">香 甜 奶 油 味 好 吃 不 腻 不 长 胖 {{product.name}}</div>
         <div>
           <div class="bg6">
             <div class="left-title">价&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;格</div>
@@ -17,7 +17,7 @@
         </div>
         <div>
           <div class="content">
-            <div class="left-title m_top_12">选&nbsp;择&nbsp;版&nbsp;本</div>
+            <div class="left-title m_top_12">选&nbsp;择&nbsp;口&nbsp;味</div>
             <div class="right-content">
               <ul class="ul_item">
                 <li class="li_item"
@@ -30,7 +30,7 @@
         </div>
         <div>
           <div class="content">
-            <div class="left-title m_top_12">选择内存配置</div>
+            <div class="left-title m_top_12">选择大小型号</div>
             <div class="right-content">
               <ul class="ul_item">
                 <li class="li_item"
@@ -48,7 +48,7 @@
         </div>
         <div>
           <div class="content">
-            <div class="left-title m_top_12">选择CPU配置</div>
+            <div class="left-title m_top_12">选择食品样式</div>
             <div class="right-content">
               <ul class="ul_item">
                 <li class="li_item"
@@ -89,9 +89,7 @@
         <div class="content11">你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。
         </div>
         <div class="imgList">
-          <img src="../../images/pic/cha.jpg" class="" alt="">
-          <img src="../../images/pic/dangao.jpg" class="" alt="">
-          <img src="../../images/pic/2.jpg" class="" alt="">
+          <img v-for="item in imgList"  v-bind:src="item" :key="item" class="" alt="商品图片">
         </div>
       </div>
 
@@ -110,19 +108,19 @@ export default {
   data(){
      return{
        product: {
-         name: "mac book pro",
+         name: "慕斯小蛋糕",
          type: [
-           {year:"2016版", memory: "4G", cpu:"i5",price:10000},
-           {year:"2016版", memory: "8G", cpu:"i5", price:12000},
-           {year:"2017版", memory: "8G", cpu:"i5",price:14000},
-           {year:"2017版", memory: "8G", cpu:"i7",price:16000},
-           {year:"2017版", memory: "16G", cpu:"i7",price:18000},
+           {year:"抹茶味", memory: "小袋", cpu:"小方多层",price:29.99},
+           {year:"抹茶味", memory: "中袋", cpu:"小方多层", price:49.99},
+           {year:"草莓味", memory: "中袋", cpu:"小方多层",price:69.99},
+           {year:"草莓味", memory: "中袋", cpu:"圆多层",price:89.99},
+           {year:"草莓味", memory: "大袋", cpu:"圆多层",price:109.99},
          ],
-         picture: 'macbook.jpg'
+         picture: 'http://www.lenuse.cn/gas/images/rr.jpg'
        },
-       typeAll:['2016版','2017版'],
-       memoryAll:['4G','8G','16G'],
-       cpuAll:['i5','i6','i7'],
+       typeAll:['抹茶味','草莓味'],
+       memoryAll:['小袋','中袋','大袋'],
+       cpuAll:['小方多层','蛋糕','圆多层'],
        typeHas:[],
        memoryHas:[],
        cpuHas:[],
@@ -139,7 +137,13 @@ export default {
        num: 1,
        select:true,
        selectItem:['产品详情','产品评价'],
-       currentItem:'产品详情'
+       currentItem:'产品详情',
+       imgList:
+         ['http://www.lenuse.cn/gas/images/ww.jpg',
+         'http://www.lenuse.cn/gas/images/dangao.jpg',
+         'http://www.lenuse.cn/gas/images/ee.jpg',
+         'http://www.lenuse.cn/gas/images/rr.jpg',
+         'http://www.lenuse.cn/gas/images/cha.jpg']
      }
   },
   created:function () {
@@ -151,8 +155,8 @@ export default {
     this.canNotBuy = false
   },
   mounted(){
-    this.hasMemoryList('2016版')
-    this.hasCpuList('2016版','4G')
+    this.hasMemoryList('抹茶味')
+    this.hasCpuList('抹茶味','小袋')
   },
   methods:{
     selectYear(item){
@@ -196,11 +200,11 @@ export default {
       }
     },
     hasMemoryList(year){
-      if(year == '2016版'){
-        this.memoryHas  = ['4G','8G']
+      if(year == '抹茶味'){
+        this.memoryHas  = ['小袋','中袋']
       }
-      if(year == '2017版'){
-        this.memoryHas  = ['8G','16G']
+      if(year == '草莓味'){
+        this.memoryHas  = ['中袋','大袋']
       }
       //判断不相同的值
       var result = [];
@@ -219,22 +223,21 @@ export default {
         }
       }
       this.noMemory = result
-      console.log('noMemory    '+this.noMemory)
     },
     hasCpuList(year,memory){
       year = this.currentYear
       memory = this.currentMemory
-      if(year == '2016版' && memory =='4G'){
-        this.cpuHas = ['i5']
+      if(year == '抹茶味' && memory =='小袋'){
+        this.cpuHas = ['小方多层']
       }
-      else if(year == '2016版' && memory =='8G'){
-        this.cpuHas = ['i5']
+      else if(year == '抹茶味' && memory =='中袋'){
+        this.cpuHas = ['小方多层']
       }
-      else if(year == '2017版' && memory =='16G'){
-        this.cpuHas = ['i7']
+      else if(year == '草莓味' && memory =='大袋'){
+        this.cpuHas = ['圆多层']
       }
-      else if(year == '2017版' && memory =='8G'){
-        this.cpuHas = ['i5','i7']
+      else if(year == '草莓味' && memory =='中袋'){
+        this.cpuHas = ['小方多层','圆多层']
       }
       //判断不相同的值
       var noCpu = [];
@@ -253,7 +256,6 @@ export default {
         }
       }
       this.noCpu = noCpu
-      console.log("noCpu   "+this.noCpu)
     },
     selectItembtn(item){
       this.currentItem = item
@@ -270,7 +272,7 @@ export default {
 .flex
   display inline-block
 .piccontent
-  width 450px
+  width 30%
   height 450px
   border 1px solid #eee
   display inline-block
@@ -282,9 +284,9 @@ export default {
 .detailcontent
   float left
   display inline-block
-  margin-left 20px
+  margin-left 40px
   text-align left
-  width calc(100% - 480px)
+  width calc(70% - 42px)
 .title
   font: 700 16px Arial,"microsoft yahei"
   color #666

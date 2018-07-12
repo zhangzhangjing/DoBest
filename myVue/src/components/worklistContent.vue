@@ -8,7 +8,8 @@
         :label='item.content'
         :key='item.id' class='flex'
         @change="selectTocomplete(item.id)"
-        :disabled='item.iscompleted'>
+        :disabled='item.iscompleted'
+        style="margin-left: 0">
         </el-checkbox>
       </el-checkbox-group>
        <div class='radio' style="margin-top: 20px;text-align: left;">

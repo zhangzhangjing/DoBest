@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import MyIndex from '@/components/MyIndex'
-import MyPath from '@/components/MyPath'
 import TodoList from '@/components/TodoList'
 import CountNum from '@/components/CountNum'
 import WorkList from '@/components/WorkList'
@@ -9,6 +8,8 @@ import MacDetail from '@/view/mac/index'
 import PersonalCenter from '@/view/person/index'
 import ReactStudy from '@/view/react/index'
 import Product from '@/view/product/index'
+import Login from '@/view/login/index'
+import Register from '@/view/register/index'
 
 Vue.use(Router)
 
@@ -20,9 +21,9 @@ export default new Router({
       component: MyIndex
     },
     {
-      path: '/mypath',
-      name: 'MyPath',
-      component: MyPath
+      path: '/Login',
+      name: 'Login',
+      component: Login
     },
     {
       path: '/todolist',
@@ -58,6 +59,11 @@ export default new Router({
       path: '/Product',
       name: 'Product',
       component: Product
+    },
+    {
+      path: '/Register',
+      name: 'Register',
+      component: Register
     }
   ]
 })

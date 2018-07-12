@@ -6,9 +6,9 @@
         <div class="content_sy">
           <div class="contenter">
             <div class="wenzi">
-              <div class="h1">Reliable, Simple and Secure Platform</div>
-              <div class="h2">Sandboxing UDID content management system ruby on rails continuous deployment big data infographic. Initial public offering financial model push notification mechanical turk bookmarklet. Term sheet convertible note colluding bootstrapping.</div>
-              <button class="standard-button">GET STARTED</button>
+              <div class="h1">真实，简单，纯真， 源于自然品质</div>
+              <div class="h2">你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。</div>
+              <button class="standard-button">了解更多</button>
             </div>
           </div>
         </div>
@@ -36,21 +36,21 @@
             <li class="li_item" style="margin-left: 0;padding-left: 0;">
               <div class="contentrt">
                 <div><i class="icon el-icon-service"></i></div>
-                <div class="item_title">标题一</div>
+                <div class="item_title">服务至上</div>
                 <div><p>你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。</p></div>
               </div>
             </li>
             <li class="li_item">
               <div class="contentrt">
-                <div><i class="icon el-icon-service"></i></div>
-                <div class="item_title">标题一</div>
+                <div><i class="icon el-icon-phone-outline"></i></div>
+                <div class="item_title">及时回馈</div>
                 <div><p>你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。</p></div>
               </div>
             </li>
             <li class="li_item">
               <div class="contentrt">
-                <div><i class="icon el-icon-service"></i></div>
-                <div class="item_title">标题一</div>
+                <div><i class="icon el-icon-time"></i></div>
+                <div class="item_title">品质新鲜</div>
                 <div><p>你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。</p></div>
               </div>
             </li>
@@ -312,10 +312,11 @@ a {
 .item_title
   margin-top 20px
   margin-bottom: 15px;
-  font-size 24px
+  font-size 20px
 .contentrt p
   line-height 28px
   margin-top 30px
+  font-size 14px
 .overlay
   background: url(https://demo.themeisle.com/azera-shop/wp-content/themes/azera-shop/images/background-images/parallax-img/team-img.jpg);
 .section-overlay

@@ -3,9 +3,9 @@
     <main-header message="产品管理" returnbtn="true"></main-header>
     <div class="main-content">
       <el-row>
-        <el-col :span="5" v-for="(item, index) in product" :key="item" :offset="index%4==0 ? 0 : 1">
+        <el-col :span="5" v-for="(item, index) in product" :key="item.id" :offset="index%4==0 ? 0 : 1">
           <el-card :body-style="{ padding: '0px' }" class="card" style="">
-            <img src="../../images/pic/dangao.jpg" class="image">
+            <img v-bind:src='item.productImg' class="image">
             <div style="padding: 18px;">
               <div class="bottom clearfix">
                 <span>{{item.name}}</span>
@@ -13,7 +13,7 @@
               </div>
             </div>
             <div class="meng">
-              <div class="item_title">{{item.name}}</div>
+              <div class="item_title"  @click="productDetail(item.proId)">{{item.name}}</div>
               <div class="jieshao"><p>{{item.productDes}}</p></div>
               <div class="priceh">￥{{item.price}}</div>
               <div class="view_btn1">
@@ -117,71 +117,71 @@
             name:"慕斯小蛋糕",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:16.66,
-            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+            productImg:'http://www.lenuse.cn/gas/images/ee.jpg'
           },
           {
-            id:0,
+            id:1,
             proId:2018012,
             name:"芒果蛋糕",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:12.88,
-            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+            productImg:'http://www.lenuse.cn/gas/images/rr.jpg'
           },
           {
-            id:0,
+            id:2,
             proId:2018201,
             name:"美味蛋挞",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:29.99,
-            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+            productImg:'http://www.lenuse.cn/gas/images/tt.jpg'
           },
           {
-            id:0,
+            id:3,
             proId:201851,
             name:"草莓新地",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:18.88,
-            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+            productImg:'http://www.lenuse.cn/gas/images/ww.jpg'
           },
           {
-            id:0,
+            id:4,
             proId:201806,
             name:"美味蛋挞",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:16.66,
-            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+            productImg:'http://www.lenuse.cn/gas/images/dangao.jpg'
           },
           {
-            id:0,
+            id:5,
             proId:202801,
             name:"慕斯小蛋糕",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:16.66,
-            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+            productImg:'http://www.lenuse.cn/gas/images/ww.jpg'
           },
           {
-            id:0,
+            id:6,
             proId:221801,
             name:"慕斯小蛋糕",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:16.66,
-            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+            productImg:'http://www.lenuse.cn/gas/images/ee.jpg'
           },
           {
-            id:0,
+            id:7,
             proId:301801,
             name:"慕斯小蛋糕",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:16.66,
-            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+            productImg:'http://www.lenuse.cn/gas/images/rr.jpg'
           },
           {
-            id:0,
+            id:8,
             proId:201809,
             name:"慕斯小蛋糕",
             productDes:'你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。',
             price:16.66,
-            productImg:'http://www.lenuse.cn/gas/static/img/dangao.jpg'
+            productImg:'http://www.lenuse.cn/gas/images/yy.jpg'
           }
         ]
       }
@@ -251,7 +251,7 @@
     line-height: 12px;
   }
 .card
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   position: relative;
 
   .price {
@@ -294,6 +294,7 @@
   color #ffa200
   font-size 20px
   margin-top 30px
+  cursor pointer
 .jieshao
   width 80%
   height 200px

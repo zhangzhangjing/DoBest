@@ -115,6 +115,7 @@
 .video-player
     width: 50%;
     height: 80%;
+    margin 0 auto
 .btn
   display: block;
   margin-top: 20px;
