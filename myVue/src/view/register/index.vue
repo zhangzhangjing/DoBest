@@ -6,10 +6,10 @@
         <div class="u-input m_t_30">
           <label>帐&nbsp;&nbsp;号</label>
           <div class="inputWrapper">
-            <input type="text" v-model="phone" placeholder="请输入手机号码或邮箱" class="inputme"/>
+            <input type="text" v-model="phone" placeholder="请输入手机号码或邮箱" class="inputme" v-on:change="changePhone"/>
           </div>
           <span class="msg z-err">
-            <span v-show="phone">
+            <span v-show="phoneTip">
               <i class="el-icon-circle-close"></i><font>请输入帐号</font>
             </span>
 					</span>
@@ -18,10 +18,10 @@
         <div class="u-input">
           <label>密&nbsp;&nbsp;码</label>
           <div class="inputWrapper">
-            <input type="password" v-model="password" placeholder="4-20个字符，区分大小写" class="inputme"/>
+            <input type="password" v-model="password" placeholder="4-20个字符，区分大小写" class="inputme" v-on:change="changePassword"/>
           </div>
           <span class="msg z-err">
-            <span v-show="password">
+            <span v-show="passwordTip">
 						  <i class="el-icon-circle-close"></i><font>请输入密码</font>
             </span>
 					</span>
@@ -30,13 +30,14 @@
         <div class="u-input" style="margin-bottom: 15px">
           <label>验证码</label>
           <div class="inputWrapper">
-            <input type="text" v-model="vcode" placeholder="请输入验证码" class="inputme"/>
+            <input type="text" v-model="vcode" placeholder="请输入验证码" class="inputme" v-on:change="changeVcode"/>
             <div class="vcode">
-              <button class="btnvcode" placeholder="">获取验证码</button>
+              <button class="btnvcode" @click="vcodeBtn" v-if="!btnFlag">获取验证码</button>
+              <button class="btnvcode" v-if="btnFlag">{{codeTips}}</button>
             </div>
           </div>
           <span class="msg z-err">
-            <span v-show="vcode">
+            <span v-show="vcodeTip">
 						  <i class="el-icon-circle-close"></i><font>请获取验证码</font>
             </span>
 					</span>
@@ -75,7 +76,12 @@
         checked: true,
         phone: '',
         password: '',
-        vcode:''
+        vcode:'',
+        phoneTip:false,
+        passwordTip:false,
+        vcodeTip:false,
+        codeTips:'获取验证码',
+        btnFlag:false,
       }
     },
     components: {
@@ -85,21 +91,60 @@
       resetBtnTapped: function () {
         console.log('记住密码')
       },
+      changePhone:function(){
+        if (this.phone ) {
+          this.phoneTip = false
+        }
+      },
+      changePassword:function(){
+        if (this.password ) {
+          this.passwordTip = false
+        }
+      },
+      changeVcode:function(){
+        if (this.vcode ) {
+          this.vcodeTip = false
+        }
+      },
+      vcodeBtn(){
+        var that = this
+        if (this.phone === '') {
+          this.phoneTip = true
+          return false
+        }
+        var i = 60
+        var timer = setInterval(function(){ myTimer() }, 1000);
+        function myTimer() {
+          i--
+          that.codeTips = i + "秒"
+          that.btnFlag = true
+          if(i == 0){
+            that.btnFlag = false
+            clearInterval(timer)
+          }
+        }
+
+      },
       handleSubmit2: function () {
         if (this.phone === '') {
-          this.$notify.error({ title: '错误', message: '请输入用户名' })
+          this.phoneTip = true
           return false
         }
         if (this.password === '') {
-          this.$notify.error({ title: '错误', message: '请输入密码' })
+          this.passwordTip = true
+          return false
+        }
+        if (this.vcode === '') {
+          this.vcodeTip = true
           return false
         }
         if (this.phone === '18791589763' && this.password === '123456') {
           this.$notify({ title: '成功', message: '登录成功！', type: 'success' })
-          this.$router.push({path: '/TodoList'})
+          this.$router.push({path: '/PersonalCenter'})
           var userInfo = {
             phone: '18791589763',
-            password: '123456'
+            password: '123456',
+            vcode:'1234'
           }
           sessionStorage.setItem('userInfo', userInfo)
         } else {

@@ -9,7 +9,7 @@
             <input type="text" v-model="phone" placeholder="请输入手机号码或邮箱" class="inputme"/>
           </div>
           <span class="msg z-err">
-            <span v-show="phone">
+            <span>
               <i class="el-icon-circle-close"></i><font>请输入帐号</font>
             </span>
 					</span>
@@ -21,13 +21,11 @@
             <input type="password" v-model="password" placeholder="4-20个字符，区分大小写" class="inputme"/>
           </div>
           <span class="msg z-err">
-            <span v-show="password">
+            <span>
 						  <i class="el-icon-circle-close"></i><font>请输入密码</font>
             </span>
 					</span>
         </div>
-
-
 
         <div class="u-input" style="margin-bottom: 0;margin-top: 0">
           <label></label>
@@ -121,20 +119,14 @@
     -moz-border-radius: 5px;
     background-clip: padding-box;
     margin-bottom: 20px;
-<<<<<<< HEAD
-    background-color: #f9fafc;
-    margin: 180px auto;
-    width: 500px;
-=======
     background-color: #fff;
     margin: 100px auto;
-    width: 350px;
->>>>>>> 6820dfe7cf3c5678ad334ef491c0abe88e010626
+    width: 400px;
     padding: 35px 35px 15px;
     box-shadow: 0 0 9px 0 rgba(92,128,255,0.17);
   }
   .contentre
-    width 500px
+    width 400px
   .remember {
     margin: 0 0 35px;
   }
@@ -179,7 +171,7 @@
     font-family: "微软雅黑";
     margin-bottom: 4px;
   .u-input .msg
-    width: calc(22% - 10px);
+    width: calc(21% - 10px);
     position: relative;
     text-align left
     margin-left 10px

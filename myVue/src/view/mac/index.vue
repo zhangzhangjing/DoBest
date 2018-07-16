@@ -17,7 +17,7 @@
         </div>
         <div>
           <div class="content">
-            <div class="left-title m_top_12">选&nbsp;择&nbsp;口&nbsp;味</div>
+            <div class="left-title">选&nbsp;择&nbsp;口&nbsp;味</div>
             <div class="right-content">
               <ul class="ul_item">
                 <li class="li_item"
@@ -30,7 +30,7 @@
         </div>
         <div>
           <div class="content">
-            <div class="left-title m_top_12">选择大小型号</div>
+            <div class="left-title">选择大小型号</div>
             <div class="right-content">
               <ul class="ul_item">
                 <li class="li_item"
@@ -48,7 +48,7 @@
         </div>
         <div>
           <div class="content">
-            <div class="left-title m_top_12">选择食品样式</div>
+            <div class="left-title">选择食品样式</div>
             <div class="right-content">
               <ul class="ul_item">
                 <li class="li_item"
@@ -294,7 +294,7 @@ export default {
   line-height 28px
   margin-bottom 5px
 .content
-  padding 0px 10px
+  padding 15px 10px
   font-size 12px
 .bg6
   background #f3f3f3
