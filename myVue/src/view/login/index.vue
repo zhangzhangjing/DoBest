@@ -121,9 +121,15 @@
     -moz-border-radius: 5px;
     background-clip: padding-box;
     margin-bottom: 20px;
+<<<<<<< HEAD
     background-color: #f9fafc;
     margin: 180px auto;
     width: 500px;
+=======
+    background-color: #fff;
+    margin: 100px auto;
+    width: 350px;
+>>>>>>> 6820dfe7cf3c5678ad334ef491c0abe88e010626
     padding: 35px 35px 15px;
     box-shadow: 0 0 9px 0 rgba(92,128,255,0.17);
   }

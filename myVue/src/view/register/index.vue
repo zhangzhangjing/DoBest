@@ -4,7 +4,7 @@
     <el-form label-position="left" label-width="0px"  fill="#ffa200" class="demo-ruleForm login-container">
       <div class="contentre">
         <div class="u-input m_t_30">
-          <label>帐号</label>
+          <label>帐&nbsp;&nbsp;号</label>
           <div class="inputWrapper">
             <input type="text" v-model="phone" placeholder="请输入手机号码或邮箱" class="inputme"/>
           </div>
@@ -16,7 +16,7 @@
         </div>
 
         <div class="u-input">
-          <label>密码</label>
+          <label>密&nbsp;&nbsp;码</label>
           <div class="inputWrapper">
             <input type="password" v-model="password" placeholder="4-20个字符，区分大小写" class="inputme"/>
           </div>
@@ -27,7 +27,7 @@
 					</span>
         </div>
 
-        <div class="u-input">
+        <div class="u-input" style="margin-bottom: 15px">
           <label>验证码</label>
           <div class="inputWrapper">
             <input type="text" v-model="vcode" placeholder="请输入验证码" class="inputme"/>
@@ -42,7 +42,7 @@
 					</span>
         </div>
 
-        <div class="u-input">
+        <div class="u-input" style="margin-bottom: 10px">
           <label></label>
           <div class="inputWrapper b_b_n">
             <el-checkbox v-model="checked"  fill="#ffa200" class="remember">我同意《服务条款》及《法律声明》</el-checkbox>
@@ -134,8 +134,8 @@
     -moz-border-radius: 5px;
     background-clip: padding-box;
     margin-bottom: 20px;
-    background-color: #f9fafc;
-    margin: 180px auto;
+    background-color: #fff;
+    margin: 100px auto;
     width: 800px;
     padding: 35px 35px 15px;
     box-shadow: 0 0 9px 0 rgba(92,128,255,0.17);
@@ -161,7 +161,7 @@
     width 50%
     right 0
     height 50px
-    background #f9fafc
+    background #fff
     bottom -2px
   .btnvcode
     border 1px solid #ffa200
