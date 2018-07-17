@@ -33,7 +33,7 @@
         <p class="titlter">蛋糕甜点商城  品质工艺   用心传承</p>
         <div class="lists">
           <ul class="ul_item">
-            <li class="li_item" style="margin-left: 0;padding-left: 0;">
+            <li class="li_item">
               <div class="contentrt">
                 <div><i class="icon el-icon-service"></i></div>
                 <div class="item_title">服务至上</div>
@@ -67,7 +67,7 @@
           <p class="titlter">蛋糕甜点商城  品质工艺  用心传承</p>
           <div class="lists1">
             <ul class="ul_item">
-              <li class="li_item1" style="margin-left: 0;padding-left: 0;">
+              <li class="li_item1">
                 <img src="../images/pic/1.jpg">
                 <div class="layer">
                   源于法国烹饪
@@ -234,7 +234,7 @@ a {
 .standard-button:hover
   background-color: rgba(255,162,0,0.8);
 .ul_item li
-  margin: 25px 25px 25px 25px;
+  margin: 25px 1.4% 25px 1.4%;
   vertical-align: middle;
 .title
   margin-top: 10px;
