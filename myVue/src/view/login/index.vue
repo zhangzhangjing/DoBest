@@ -6,10 +6,10 @@
         <div class="u-input m_t_30">
           <label>帐号</label>
           <div class="inputWrapper">
-            <input type="text" v-model="phone" placeholder="请输入手机号码或邮箱" class="inputme"/>
+            <input type="text" v-model="phone" placeholder="请输入手机号码或邮箱" class="inputme" v-on:change="changePhone"/>
           </div>
           <span class="msg z-err">
-            <span>
+            <span v-show="phoneTip">
               <i class="el-icon-circle-close"></i><font>请输入帐号</font>
             </span>
 					</span>
@@ -18,10 +18,10 @@
         <div class="u-input" style="margin-bottom: 10px;">
           <label>密码</label>
           <div class="inputWrapper">
-            <input type="password" v-model="password" placeholder="4-20个字符，区分大小写" class="inputme"/>
+            <input type="password" v-model="password" placeholder="4-20个字符，区分大小写" class="inputme" v-on:change="changePassword"/>
           </div>
           <span class="msg z-err">
-            <span>
+            <span v-show="passwordTip">
 						  <i class="el-icon-circle-close"></i><font>请输入密码</font>
             </span>
 					</span>
@@ -60,23 +60,35 @@
         checked: true,
         phone: '',
         password: '',
-        vcode:''
+        vcode:'',
+        phoneTip:false,
+        passwordTip:false,
       }
     },
     components: {
       MainHeader
     },
     methods: {
+      changePhone:function(){
+        if (this.phone ) {
+          this.phoneTip = false
+        }
+      },
+      changePassword:function(){
+        if (this.password ) {
+          this.passwordTip = false
+        }
+      },
       resetBtnTapped: function () {
         console.log('记住密码')
       },
       handleSubmit2: function () {
         if (this.phone === '') {
-          this.$notify.error({ title: '错误', message: '请输入用户名' })
+          this.phoneTip = true
           return false
         }
         if (this.password === '') {
-          this.$notify.error({ title: '错误', message: '请输入密码' })
+          this.passwordTip = true
           return false
         }
         if (this.phone === '18791589763' && this.password === '123456') {
