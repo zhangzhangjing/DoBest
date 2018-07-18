@@ -4,12 +4,13 @@ import MyIndex from '@/components/MyIndex'
 import TodoList from '@/components/TodoList'
 import CountNum from '@/components/CountNum'
 import WorkList from '@/components/WorkList'
-import MacDetail from '@/view/mac/index'
+import ProductDetail from '@/view/mac/index'
 import PersonalCenter from '@/view/person/index'
 import ReactStudy from '@/view/react/index'
 import Product from '@/view/product/index'
 import Login from '@/view/login/index'
 import Register from '@/view/register/index'
+import Cart from '@/view/cart/index'
 
 Vue.use(Router)
 
@@ -41,9 +42,9 @@ export default new Router({
       component: WorkList
     },
     {
-      path: '/macdetail',
-      name: 'MacDetail',
-      component: MacDetail
+      path: '/ProductDetail',
+      name: 'ProductDetail',
+      component: ProductDetail
     },
     {
       path: '/PersonalCenter',
@@ -64,6 +65,11 @@ export default new Router({
       path: '/Register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/Cart',
+      name: 'Cart',
+      component: Cart
     }
   ]
 })

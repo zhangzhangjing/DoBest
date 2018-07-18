@@ -17,9 +17,23 @@
                 <li><a href="#/CountNum">财务明细</a></li>
                 <li><a href="#/WorkList">工作流</a></li>
                 <li><a href="#/ReactStudy">视频看点</a></li>
-                <li><a href="#/PersonalCenter">个人中心</a></li>
-                <li><a href="#/Login">登录</a></li>
-                <li><a href="#/Register">注册</a></li>
+                <li v-if="!sessionFlag"><a href="#/Login">登录</a></li>
+                <li v-if="sessionFlag">
+                  <a>您好，
+                    <span class="mestyle">
+                      <span class="color1">Mrs 薄荷凉 </span>
+                      <i class="el-icon-arrow-down"></i>
+                      <div class="iltemsme">
+                        <a href="#/PersonalCenter">个人中心</a>
+                        <a href="#/Cart">我的购物车</a>
+                        <a @click="clearUserinfo">退出</a>
+                      </div>
+                    </span>
+                  </a>
+                </li>
+                <li v-if="sessionFlag">
+                  <shop-cart ref="cart"></shop-cart>
+                </li>
               </ul>
             </div>
           </div>
@@ -32,6 +46,7 @@
 </template>
 
 <script>
+  import ShopCart from '@/view/cart/shop-cart.vue'
 export default {
   name: 'MainHeader',
   props: ['message','returnbtn'],
@@ -39,18 +54,34 @@ export default {
     return {
       myTitle: 'TodoList',
       // returnBtn: true
+      sessionFlag:false
     }
+  },
+  components:{
+    ShopCart
   },
   methods:{
     routerToIndex(){
       this.$router.push({path: '/'})
-    }
+    },
+    obtainSessionMsg(){
+      var userInfo = sessionStorage.getItem("userInfo");
+      if(userInfo){
+        this.sessionFlag = true
+      }
+    },
+    clearUserinfo(){
+      sessionStorage.removeItem('userInfo')
+      this.sessionFlag = false
+      this.$router.push({path: '/'})
+    },
   },
   created(){
     const urlstr = window.location.href
     const reg =/\/$/
     if(reg.test(urlstr)){
     }
+    this.obtainSessionMsg()
   }
 }
 </script>
@@ -156,5 +187,36 @@ export default {
   color: #313131;
 .ul_item li a :link,.ul_item li a :visited
   color: #313131;
+.mestyle
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 5px 10px;
+  position relative
+  cursor pointer
+.color1
+  color #FF8400
+.mestyle:hover
+  background #eeeeee
+.iltemsme
+  display none
+  position absolute
+  left 0
+  top 38px
+  width 100%
+  background #ffffff
+.mestyle:hover .iltemsme
+  display block
+.iltemsme a
+  display block
+  height 30px
+  line-height 30px
+  border 1px solid #FECC5B
+  border-top none
+  padding-left 10px
+  text-align left
+  text-decoration none
+.iltemsme a:hover
+  background #fff5da
 
 </style>

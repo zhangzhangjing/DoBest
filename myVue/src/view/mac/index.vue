@@ -69,7 +69,7 @@
               <el-input-number v-model="num" @change="handleChange" :min="1" :max="10" style="width: 120px;"></el-input-number>
             </div>
             <div class="flex m_l_20">
-              <el-button type="warning" :disabled="canNotBuy">加入购物车</el-button>
+              <el-button type="warning" :disabled="canNotBuy" @click="addCart()">加入购物车</el-button>
               <el-button type="danger" :disabled="canNotBuy" @click="btnBuy()">立即购买</el-button>
             </div>
           </div>
@@ -197,6 +197,14 @@ export default {
     btnBuy(){
       if(!this.noProduct){
         this.$notify({ title: '成功', message: '下单成功！', type: 'success' })
+      }
+    },
+    addCart(){
+      var userInfo = sessionStorage.getItem('userInfo')
+      if(userInfo){
+        console.log("加入购物车")
+      }else{
+        this.$router.push({path: '/login'})
       }
     },
     hasMemoryList(year){

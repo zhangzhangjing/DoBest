@@ -228,7 +228,7 @@
           })
       },
       productDetail(id){
-        this.$router.push({path: '/MacDetail', query: { pid:id}})
+        this.$router.push({path: '/ProductDetail', query: { pid:id}})
       }
     },
     mounted(){

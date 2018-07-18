@@ -27,10 +27,11 @@
 					</span>
         </div>
 
-        <div class="u-input" style="margin-bottom: 0;margin-top: 0">
+        <div class="u-input" style="margin-bottom: 10px;margin-top: 10px">
           <label></label>
           <div class="inputWrapper b_b_n">
             <el-checkbox v-model="checked"  fill="#ffa200" class="remember">记住密码</el-checkbox>
+            <a class="resfont" href="#/Register"> 立即注册</a>
           </div>
           <span class="msg z-err" style="display: inline-block;">
 					</span>
@@ -201,4 +202,10 @@
     outline none
     width 90%
     background none
+.resfont
+  font-size 14px
+  display inline-block
+  line-height 24px
+  color #a87a2c
+  text-decoration none
 </style>
