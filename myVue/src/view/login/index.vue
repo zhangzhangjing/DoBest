@@ -27,11 +27,19 @@
 					</span>
         </div>
 
-        <div class="u-input" style="margin-bottom: 10px;margin-top: 10px">
+        <div class="u-input" style="margin-top: 10px;margin-bottom: 0px;">
           <label></label>
           <div class="inputWrapper b_b_n">
             <el-checkbox v-model="checked"  fill="#ffa200" class="remember">记住密码</el-checkbox>
-            <a class="resfont" href="#/Register"> 立即注册</a>
+          </div>
+          <span class="msg z-err" style="display: inline-block;">
+					</span>
+        </div>
+
+        <div class="u-input" style="margin-bottom: 10px;text-align: right;margin-top: 0">
+          <label></label>
+          <div class="inputWrapper b_b_n">
+            <span class="resfont">没有账号，<a class="resfont" href="#/Register"> 立即注册</a></span>
           </div>
           <span class="msg z-err" style="display: inline-block;">
 					</span>
@@ -58,7 +66,7 @@
     data () {
       return {
         msg: 'MyPath的页面',
-        checked: true,
+        checked: false,
         phone: '',
         password: '',
         vcode:'',
@@ -99,12 +107,30 @@
             phone: '18791589763',
             password: '123456'
           }
-          sessionStorage.setItem('userInfo', userInfo)
+          sessionStorage.setItem('userInfo', JSON.stringify(userInfo))
+          sessionStorage.setItem('remember',this.checked)
         } else {
           this.$notify.error({ title: '错误', message: '用户名或密码错误，请检查再登录' })
           return false
         }
+      },
+      getUserInfo(){
+        console.log(sessionStorage.getItem('remember'))
+        if(sessionStorage.getItem('remember')){
+          var userInfo = JSON.parse(sessionStorage.getItem('userInfo')) || {}
+          if(userInfo){
+            this.phone = userInfo.phone || ''
+            this.password =userInfo.password || ''
+          }
+        }else{
+          this.checked = false
+          sessionStorage.removeItem('userInfo')
+          sessionStorage.setItem('remember',this.checked)
+        }
       }
+    },
+    created(){
+      this.getUserInfo
     }
   }
 
@@ -205,7 +231,7 @@
 .resfont
   font-size 14px
   display inline-block
-  line-height 24px
   color #a87a2c
   text-decoration none
+  vertical-align bottom
 </style>

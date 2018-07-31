@@ -25,6 +25,11 @@ export function createRequestPromise(options)
 		// headers = Object.assign({}, headers, options.headers);
 	}
 
+	var config = {
+    SecretId:'AKIDpa9YlneOzXvQnzl3pPnzJJO6tbIzuO9t ',
+    SecretKey:'1xqkZAqXFrz0vhIiwQqW8ZorjRyNbhcL'
+  }
+
 	return new Promise(function(resolve, reject){
     $.ajax({
 		    url: options.url,

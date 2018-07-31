@@ -33,6 +33,7 @@ export default {
   color #666
   border-top 1px solid #ebebeb;
   position fixed
+  z-index 9999
 .footer-content
   width 80%
   margin 0 auto

@@ -186,10 +186,10 @@ a {
   display block
   box-sizing: inherit;
 .meng
-  background: rgba(0, 0, 0, 0.1);
+  //background inherit
   position relative
   height 600px
-  background-attachment: fixed;
+  //background-attachment: fixed;
   background-position: top center;
   background-size: cover;
   display block
