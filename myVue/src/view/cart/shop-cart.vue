@@ -1,8 +1,8 @@
 <template>
   <div class="shop-cart">
-    <div class="cart">
-      <i class="el-icon-goods"></i>
-    </div>
+    <a class="cart" href="#/cart">
+      <img class="cart_ico" src="http://www.lenuse.cn/gas/images/cart_ico.png" alt="购物车"/>
+    </a>
     <shop-cart-balls ref="ball"></shop-cart-balls>
   </div>
 </template>
@@ -27,6 +27,10 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="stylus">
+  .cart_ico
+    width 15px
+    height 15px
+
 
 </style>

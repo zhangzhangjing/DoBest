@@ -18,7 +18,7 @@
                 <li><a href="#/worklist">工作流</a></li>
                 <li><a href="#/reactstudy">视频看点</a></li>
                 <li v-if="!sessionFlag"><a href="#/login">登录</a></li>
-                <li v-if="sessionFlag">
+                <li v-if="sessionFlag" class="p_r_0">
                   <a>您好，
                     <span class="mestyle">
                       <span class="color1">Mrs 薄荷凉 </span>
@@ -117,6 +117,8 @@ export default {
   position absolute
   left 10%
   top 20px
+.ul_item .p_r_0
+  padding-right 0
 
 
 @media  screen and (min-width:1200px){

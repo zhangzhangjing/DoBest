@@ -2,6 +2,19 @@
   <div  class="list">
     <main-header message="产品管理" returnbtn="true"></main-header>
     <div class="main-content">
+      <div class="sousuo" :class="{fixed: scroll}">
+        <div class="ss_content">
+          <div class="kuang">
+            <div class="ico_width width90" v-if="!edit">
+              <i class="el-icon-search"></i>
+              <span class="span_col">{{search}}</span>
+            </div>
+            <div class="width10 suosuobtn" @click="searchBtn">搜索</div>
+
+            <input class="width90 inpute" type="text" v-model="searchContent" placeholder="" @input="searchInput">
+          </div>
+        </div>
+      </div>
       <el-row>
         <el-col :span="5" v-for="(item, index) in product" :key="item.id" :offset="index%4==0 ? 0 : 1">
           <el-card :body-style="{ padding: '0px' }" class="card" style="">
@@ -104,12 +117,16 @@
     },
     data(){
       return{
+        scroll:false,
         progress: 0,
         page: 1,
         tableData:[],
         tableData1:[],
         listLoading: false,
         listLoading1: false,
+        edit:false,
+        searchContent:'',
+        search:'美味蛋挞',
         product: [
           {
             id:0,
@@ -187,6 +204,22 @@
       }
     },
     methods:{
+      searchInput(){
+        if(this.searchContent){
+          this.edit = true
+        }else{
+          this.edit = false
+        }
+      },
+      searchBtn(){
+        var search = ''
+        if(this.searchContent){
+          search = this.searchContent
+        }else{
+          search = this.search
+        }
+        console.log(search)
+      },
       getProductList(){
         this.listLoading = true;
         cts.getProductList().then((response) => {
@@ -229,11 +262,20 @@
       },
       productDetail(id){
         this.$router.push({path: '/ProductDetail', query: { pid:id}})
-      }
+      },
+      handleScroll () {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+        if(scrollTop>=120){
+          this.scroll = true
+        }else{
+          this.scroll = false
+        }
+      },
     },
     mounted(){
       this.getProductList()
       this.getMsg()
+      window.addEventListener('scroll', this.handleScroll)
     },
   }
 </script>
@@ -259,7 +301,6 @@
     float: right;
     color #ffa200
   }
-
   .image {
     width: 100%;
     display: block;
@@ -323,6 +364,63 @@
   box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.3);
   cursor pointer
   margin 0 auto
-
+.sousuo
+  min-height 50px
+.fixed
+  width: 80%;
+  background: #fff;
+  position: fixed;
+  z-index: 999;
+  top: 30px;
+.ss_content
+  width 60%
+  margin 0 auto
+  margin-bottom 30px
+.ico_width
+  width 85%
+  display inline-block
+.width90
+  width 90%
+  float left
+.width10
+  width 10%
+  float left
+.suosuobtn
+  width: 8%;
+  float: left;
+  height: 40px;
+  background: #ff5000;
+  position: absolute;
+  right: -3px;
+  border-radius: 0px 20px 20px 0px;
+  top: -2px;
+  line-height 40px
+  padding-left 20px
+  color: #fff;
+  font-size 20px
+  cursor pointer
+.kuang
+  width 100%
+  height 16px
+  border-radius 20px
+  border 2px solid #ff5000
+  position relative
+  padding 10px 20px
+.span_col
+  display inline-block
+  height 16px
+  line-height 16px
+  color #666666
+  font-size 12px
+  margin-left 10px
+  vertical-align: text-top;
+.inpute
+  width calc(90% - 40px)
+  outline none
+  position absolute
+  left 0
+  background none
+  padding-left 20px
+  border none
 
 </style>
