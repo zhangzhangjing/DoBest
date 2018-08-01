@@ -84,12 +84,53 @@
             @click="selectItembtn(item)">
           {{item}}</div>
       </div>
-      <div class="titler">
+      <div class="titler" v-if="currentItem=='产品详情'">
         <div class="h1">产品详情</div>
         <div class="content11">你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。你会遇见一些人，也会不停的和一些人说再见，从陌生到熟悉，再从熟悉回到陌生，从臭味相投到分道扬镳，从相见恨晚到不如不见。
         </div>
         <div class="imgList">
           <img v-for="item in imgList"  v-bind:src="item" :key="item" class="" alt="商品图片">
+        </div>
+      </div>
+      <div class="titler" v-if="currentItem=='产品评价'">
+        <div>累计评价<span class="color ma_l_10">{{commentList.totalNumber}}</span></div>
+        <div class="zongtiComment">
+          <div class="width10 textcenter">
+            <div class="titlln">总体评分</div>
+            <div class="commentGrade">{{commentList.gradeScore}}</div>
+            <div class="starGrade">
+              <el-rate
+                v-model="commentList.gradeScore"
+                disabled
+                show-score
+                text-color="#ff9900"
+                score-template="">
+              </el-rate>
+            </div>
+          </div>
+          <div class="width90">11</div>
+        </div>
+        <div class="selectItem">222</div>
+        <div class="commentList">
+          <ul class="conment_ul">
+            <li class="conment_li" v-for="item in commentList.list" :key="item.commentId">
+              <div class="width60">
+                <div class="conmentFont">{{item.comment}}</div>
+                <div class="conmentPic">
+                  <div class="conmentPic_item" v-for="itemPic in item.commentImgList" :key="itemPic">
+                    <img v-bind:src="itemPic" alt="" >
+                  </div>
+                </div>
+                <div class="conmentTime">{{item.commentTime}}</div>
+              </div>
+              <div class="width30 proDescription">
+                <div class="des">口味：{{item.selectDescription.taste}}</div>
+                <div class="des">大小型号：{{item.selectDescription.size}}</div>
+                <div class="des">样式：{{item.selectDescription.foodModel}}</div>
+              </div>
+              <div class="width10 conmentName">{{item.commentUserName}}(匿名)</div>
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -143,7 +184,74 @@ export default {
          'http://www.lenuse.cn/gas/images/dangao.jpg',
          'http://www.lenuse.cn/gas/images/ee.jpg',
          'http://www.lenuse.cn/gas/images/rr.jpg',
-         'http://www.lenuse.cn/gas/images/cha.jpg']
+         'http://www.lenuse.cn/gas/images/cha.jpg'],
+       commentList:{
+         proId:13,
+         totalNumber:423,
+         gradeScore:4.8,
+         list:[
+           {
+             commentId:123,
+             comment:'口味棒极了，而且吃起来不腻。下次再来！',
+             time:'2018-12-20',
+             commentUserName:'smile******1',
+             selectDescription:{
+               size:'中袋',
+               taste:'抹茶味',
+               foodModel:'圆多层'
+             },
+             commentImgList:[],
+             commentTime:'2018-12-23',
+           },
+           {
+             commentId:176,
+             comment:'口味棒极了，而且吃起来不腻。下次再来！',
+             time:'2018-12-20',
+             commentUserName:'smile******1',
+             selectDescription:{
+               size:'中袋',
+               taste:'抹茶味',
+               foodModel:'圆多层'
+             },
+             commentImgList:['http://www.lenuse.cn/gas/images/ww.jpg',
+               'http://www.lenuse.cn/gas/images/dangao.jpg',
+              ],
+             commentTime:'2018-12-23',
+           },
+           {
+             commentId:145,
+             comment:'口味棒极了，而且吃起来不腻。下次再来！',
+             time:'2018-12-20',
+             commentUserName:'smile******1',
+             selectDescription:{
+               size:'中袋',
+               taste:'抹茶味',
+               foodModel:'圆多层'
+             },
+             commentImgList:[
+               'http://www.lenuse.cn/gas/images/ee.jpg',
+               'http://www.lenuse.cn/gas/images/rr.jpg',
+               'http://www.lenuse.cn/gas/images/cha.jpg'],
+             commentTime:'2018-12-23',
+           },
+           {
+             commentId:177,
+             comment:'口味棒极了，而且吃起来不腻。下次再来！',
+             time:'2018-12-20',
+             commentUserName:'smile******1',
+             selectDescription:{
+               size:'中袋',
+               taste:'抹茶味',
+               foodModel:'圆多层'
+             },
+             commentImgList:[
+               'http://www.lenuse.cn/gas/images/ee.jpg',
+               'http://www.lenuse.cn/gas/images/rr.jpg',
+               ],
+             commentTime:'2018-12-23',
+           }
+         ]
+       }
      }
   },
   created:function () {
@@ -388,4 +496,85 @@ export default {
   display block
   margin 20px auto
   max-width 80%
+.ma_l_10
+  margin-left 10px
+.conment_ul
+  margin-bottom 80px
+  float left
+  width 100%
+.conment_li
+  width 100%
+  float left
+  list-style none
+  border-bottom 1px solid #e3e3e3
+  padding-bottom 15px
+  padding-top 15px
+  text-align left
+.width60
+  width 60%
+  float left
+.width30
+  width 30%
+  float left
+.width10
+  width 10%
+  float left
+.proDescription
+  text-align left
+  font-size 12px
+  width 15%
+  float left
+.des
+  color #9c9c9c
+  line-height 20px
+.conmentFont
+  line-height 20px
+  font-size 12px
+  color #333
+  width calc(100% - 20px)
+.conmentPic
+  margin-top 15px
+  width 100%
+.conmentPic_item
+  width 44px
+  height 44px
+  border 2px solid #f2f2f2
+  margin-right 8px
+  display inline-block
+.conmentPic_item img
+  width 40px
+  height 40px
+  max-width 40px
+  margin 2px 2px
+.conmentTime
+  font-size 12px
+  color #ccc
+  margin-top 15px
+.conmentName
+  min-height 60px
+  line-height 60px
+  font-size 12px
+  color #666
+.zongtiComment
+  background #ffffff
+  border 1px solid #c8c8c8
+  padding 20px 20px
+  width calc(100% - 40px)
+  margin-top 20px
+  float left
+.width90
+  width 90%
+  float left
+.titlln
+  color: #404040;
+  font-size: 12px;
+  font-weight: 100;
+.commentGrade
+  color: #f60;
+  font-family: arial;
+  font-size: 32px;
+  line-height: 32px;
+  margin: 5px 2px;
+.textcenter
+  text-align center
 </style>
