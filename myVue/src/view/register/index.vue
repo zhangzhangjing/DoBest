@@ -140,7 +140,7 @@
         }
         if (this.phone === '18791589763' && this.password === '123456') {
           this.$notify({ title: '成功', message: '登录成功！', type: 'success' })
-          this.$router.push({path: '/PersonalCenter'})
+          this.$router.push({path: '/personalcenter'})
           var userInfo = {
             phone: '18791589763',
             password: '123456',

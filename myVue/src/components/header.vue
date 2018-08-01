@@ -13,19 +13,19 @@
             <div class="header-nav-wrap">
               <ul class="ul_item">
                 <li><a href="" @click="routerToIndex">网站首页</a></li>
-                <li><a href="#/Product">产品管理</a></li>
-                <li><a href="#/CountNum">财务明细</a></li>
-                <li><a href="#/WorkList">工作流</a></li>
-                <li><a href="#/ReactStudy">视频看点</a></li>
-                <li v-if="!sessionFlag"><a href="#/Login">登录</a></li>
+                <li><a href="#/product">产品管理</a></li>
+                <li><a href="#/countnum">财务明细</a></li>
+                <li><a href="#/worklist">工作流</a></li>
+                <li><a href="#/reactstudy">视频看点</a></li>
+                <li v-if="!sessionFlag"><a href="#/login">登录</a></li>
                 <li v-if="sessionFlag">
                   <a>您好，
                     <span class="mestyle">
                       <span class="color1">Mrs 薄荷凉 </span>
                       <i class="el-icon-arrow-down"></i>
                       <div class="iltemsme">
-                        <a href="#/PersonalCenter">个人中心</a>
-                        <a href="#/Cart">我的购物车</a>
+                        <a href="#/personalcenter">个人中心</a>
+                        <a href="#/cart">我的购物车</a>
                         <a @click="clearUserinfo">退出</a>
                       </div>
                     </span>

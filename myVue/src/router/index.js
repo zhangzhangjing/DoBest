@@ -22,7 +22,7 @@ export default new Router({
       component: MyIndex
     },
     {
-      path: '/Login',
+      path: '/login',
       name: 'Login',
       component: Login
     },
@@ -42,32 +42,32 @@ export default new Router({
       component: WorkList
     },
     {
-      path: '/ProductDetail',
+      path: '/productdetail',
       name: 'ProductDetail',
       component: ProductDetail
     },
     {
-      path: '/PersonalCenter',
+      path: '/personalcenter',
       name: 'PersonalCenter',
       component: PersonalCenter
     },
     {
-      path: '/ReactStudy',
+      path: '/reactstudy',
       name: 'ReactStudy',
       component: ReactStudy
     },
     {
-      path: '/Product',
+      path: '/product',
       name: 'Product',
       component: Product
     },
     {
-      path: '/Register',
+      path: '/register',
       name: 'Register',
       component: Register
     },
     {
-      path: '/Cart',
+      path: '/cart',
       name: 'Cart',
       component: Cart
     }

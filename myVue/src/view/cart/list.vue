@@ -2,7 +2,7 @@
   <!-- list.vue -->
   <div>
     <ul class="main">
-      <li class="item">
+      <li class="item font12">
         <div class="width10">
           <input type="checkbox" value="" id="selectAll" @change='selectAllBtn'  v-model="selectAll">
           <label for="selectAll">全选</label>
@@ -215,7 +215,7 @@
             item.tolPrice = Math.floor(item.tolPrice*100)/100
           }
         })
-        this.selectOneBtn(id)
+        this.selectOneBtn()
       },
       //删除购物车
       deleteCartProduct(id){
@@ -225,6 +225,7 @@
             this.commonList.splice(i,1)
           }
         }
+        this.selectOneBtn()
       },
       //多个一起删除
       deleteAllCartProduct(){
@@ -238,6 +239,7 @@
         for(var i=0;i<selectList.length;i++){
           this.deleteCartProduct(selectList[i])
         }
+        this.selectOneBtn()
       },
       payMoney(){
         //结算
@@ -283,6 +285,8 @@
   background #e5e5e5
   z-index 9999
   list-style none
+  font-size 12px
+.font12
   font-size 12px
 .textright
   text-align right

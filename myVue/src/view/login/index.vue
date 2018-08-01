@@ -39,7 +39,7 @@
         <div class="u-input" style="margin-bottom: 10px;text-align: right;margin-top: 0">
           <label></label>
           <div class="inputWrapper b_b_n">
-            <span class="resfont">没有账号，<a class="resfont" href="#/Register"> 立即注册</a></span>
+            <span class="resfont">没有账号，<a class="resfont" href="#/register"> 立即注册</a></span>
           </div>
           <span class="msg z-err" style="display: inline-block;">
 					</span>
@@ -102,7 +102,7 @@
         }
         if (this.phone === '18791589763' && this.password === '123456') {
           this.$notify({ title: '成功', message: '登录成功！', type: 'success' })
-          this.$router.push({path: '/TodoList'})
+          this.$router.push({path: '/todolist'})
           var userInfo = {
             phone: '18791589763',
             password: '123456'
