@@ -93,9 +93,9 @@
         </div>
       </div>
       <div class="titler" v-if="currentItem=='产品评价'">
-        <div>累计评价<span class="color ma_l_10">{{commentList.totalNumber}}</span></div>
+        <div class="h2">累计评价<span class="color ma_l_10">{{commentList.totalNumber}}</span></div>
         <div class="zongtiComment">
-          <div class="width10 textcenter">
+          <div class="width10 textcenter" style="border-right:1px dotted #ddd">
             <div class="titlln">总体评分</div>
             <div class="commentGrade">{{commentList.gradeScore}}</div>
             <div class="starGrade">
@@ -108,20 +108,39 @@
               </el-rate>
             </div>
           </div>
-          <div class="width90">11</div>
+          <div class="width90 wi90p_20">
+            <span class="comment_item" v-for="item in comKeysTip" :key="item.type">
+              <a class="item_a good" v-bind:class="{good:item.isGood,bad:!item.isGood}">
+                {{item.tip}} <span class="numB">({{item.num}})</span> </a>
+            </span>
+          </div>
         </div>
-        <div class="selectItem">222</div>
+        <div class="zongtiComment bgeee">
+          <template>
+            <el-radio-group v-model="commentList.listItem" @change="getItemList(commentList.listItem)">
+              <el-radio :label="1">全部</el-radio>
+              <el-radio :label="2">追评(23)</el-radio>
+              <el-radio :label="3">有图(87)</el-radio>
+            </el-radio-group>
+          </template>
+        </div>
         <div class="commentList">
           <ul class="conment_ul">
             <li class="conment_li" v-for="item in commentList.list" :key="item.commentId">
               <div class="width60">
-                <div class="conmentFont">{{item.comment}}</div>
-                <div class="conmentPic">
-                  <div class="conmentPic_item" v-for="itemPic in item.commentImgList" :key="itemPic">
-                    <img v-bind:src="itemPic" alt="" >
+                <div>
+                  <div class="conmentFont">{{item.comment}}</div>
+                  <div class="conmentPic">
+                    <div class="conmentPic_item" v-for="itemPic in item.commentImgList" :key="itemPic">
+                      <img v-bind:src="itemPic" alt="" >
+                    </div>
                   </div>
+                  <div class="conmentTime">{{item.commentTime}}</div>
                 </div>
-                <div class="conmentTime">{{item.commentTime}}</div>
+                <div class="afterCom" v-if="item.afterCom">
+                  <div class="conmentTime inline">追评 （{{item.afterCom.time}}）:</div>
+                  <div class="conmentFont inline" style="width: 60%;margin-left: 20px;">{{item.afterCom.comment}}</div>
+                </div>
               </div>
               <div class="width30 proDescription">
                 <div class="des">口味：{{item.selectDescription.taste}}</div>
@@ -179,6 +198,8 @@ export default {
        select:true,
        selectItem:['产品详情','产品评价'],
        currentItem:'产品详情',
+       //评论的标签合集
+       comKeysTip:[],
        imgList:
          ['http://www.lenuse.cn/gas/images/ww.jpg',
          'http://www.lenuse.cn/gas/images/dangao.jpg',
@@ -189,10 +210,28 @@ export default {
          proId:13,
          totalNumber:423,
          gradeScore:4.8,
+         listItem:1,
          list:[
            {
              commentId:123,
              comment:'口味棒极了，而且吃起来不腻。下次再来！',
+             commentKeys:[
+               { tip:'口味清爽',
+                 isGood:1,
+                 type:1
+               },
+               { tip:'好吃',
+                 isGood:1,
+                 type:2
+               },
+               { tip:'香甜美味',
+                 isGood:1,
+                 type:3
+               },
+               { tip:'包装漂亮',
+                 isGood:1,
+                 type:4
+               }],
              time:'2018-12-20',
              commentUserName:'smile******1',
              selectDescription:{
@@ -202,10 +241,36 @@ export default {
              },
              commentImgList:[],
              commentTime:'2018-12-23',
+             afterCom:{
+               time:'2019-2-23',
+               comment:'哈哈，又下单了奥，所以来追评一下，祝店家生意兴隆~~'
+             }
            },
            {
              commentId:176,
              comment:'口味棒极了，而且吃起来不腻。下次再来！',
+             commentKeys:[
+               { tip:'口味清爽',
+                 isGood:1,
+                 type:1
+               },
+               { tip:'好吃',
+                 isGood:1,
+                 type:2
+               },
+               { tip:'香甜美味',
+                 isGood:1,
+                 type:3
+               },
+               { tip:'包装漂亮',
+                 isGood:1,
+                 type:4
+               },
+               { tip:'太甜',
+                 isGood:0,
+                 type:10
+               }
+             ],
              time:'2018-12-20',
              commentUserName:'smile******1',
              selectDescription:{
@@ -217,10 +282,36 @@ export default {
                'http://www.lenuse.cn/gas/images/dangao.jpg',
               ],
              commentTime:'2018-12-23',
+             afterCom:{
+               time:'2019-2-23',
+               comment:'太好吃了，已经长胖啦！不过还是要买给家人吃。'
+             }
            },
            {
              commentId:145,
              comment:'口味棒极了，而且吃起来不腻。下次再来！',
+             commentKeys:[
+               { tip:'口味清爽',
+                 isGood:1,
+                 type:1
+               },
+               { tip:'好吃',
+                 isGood:1,
+                 type:2
+               },
+               { tip:'香甜美味',
+                 isGood:1,
+                 type:3
+               },
+               { tip:'包装漂亮',
+                 isGood:1,
+                 type:4
+               },
+               { tip:'太甜',
+                 isGood:0,
+                 type:10
+               }
+             ],
              time:'2018-12-20',
              commentUserName:'smile******1',
              selectDescription:{
@@ -237,6 +328,28 @@ export default {
            {
              commentId:177,
              comment:'口味棒极了，而且吃起来不腻。下次再来！',
+             commentKeys:[
+               { tip:'口味清爽',
+                 isGood:1,
+                 type:1
+               },
+               { tip:'好吃',
+                 isGood:1,
+                 type:2
+               },
+               { tip:'香甜美味',
+                 isGood:1,
+                 type:3
+               },
+               { tip:'包装漂亮',
+                 isGood:1,
+                 type:4
+               },
+               { tip:'太甜',
+                 isGood:0,
+                 type:10
+               }
+             ],
              time:'2018-12-20',
              commentUserName:'smile******1',
              selectDescription:{
@@ -264,7 +377,8 @@ export default {
   },
   mounted(){
     this.hasMemoryList('抹茶味')
-    this.hasCpuList('抹茶味','小袋')
+    this.hasCpuList('抹茶味','小袋'),
+    this.getCommentKeys();
   },
   methods:{
     selectYear(item){
@@ -375,6 +489,74 @@ export default {
     },
     selectItembtn(item){
       this.currentItem = item
+    },
+    getCommentKeys(){
+      var commentKeys = this.commentList.list || []
+      var tips = []
+      commentKeys.forEach(item =>{
+        if(item.commentKeys){
+          tips.push(item.commentKeys)
+        }
+      })
+      var keyArr = []
+      tips.forEach(item =>{
+        if(item.length>0){
+          item.forEach(key =>{
+            keyArr.push(key)
+          })
+        }
+      })
+      var comKeyObj = []
+      var type = []
+      keyArr.forEach(item =>{
+        if(item.type && !type.includes(item.type) ){
+          type.push(item.type)
+        }
+      })
+      type.forEach(item=>{
+        var num = 0
+        var ins = 0
+        keyArr.forEach(key =>{
+          if(item == key.type){
+            num ++
+            //获取一个下标记录起来
+            ins = keyArr.indexOf(key)
+          }
+        })
+        comKeyObj.push({
+          type:item,
+          tip:keyArr[ins].tip,
+          isGood:keyArr[ins].isGood,
+          num:num
+        })
+      })
+      this.comKeysTip = comKeyObj
+    },
+    getItemList(item){
+      let commentKeys = this.commentList.list || []
+      console.log(item)
+      if(item===1){
+        var list = []
+        list = commentKeys
+      }
+      if(item===2){
+        var list = []
+        commentKeys.forEach(item =>{
+          if(item.afterCom){
+            list.push(item)
+          }
+        })
+      }
+      if(item===3){
+        var list = []
+        commentKeys.forEach(item =>{
+          if(item.commentImgList.length>0){
+            list.push(item)
+          }
+        })
+      }
+      this.commentList.list = list
+
     }
   }
 }
@@ -482,6 +664,8 @@ export default {
   margin-top: 10px;
   background: #ececec;
   content: "";
+.h2
+  padding-left 10px
 .content11
   margin-top 20px
   font-size 14px
@@ -496,6 +680,9 @@ export default {
   display block
   margin 20px auto
   max-width 80%
+.numB
+  padding 0 5px
+  font-size 11px
 .ma_l_10
   margin-left 10px
 .conment_ul
@@ -550,6 +737,8 @@ export default {
   font-size 12px
   color #ccc
   margin-top 15px
+.afterCom
+  margin-top 10px
 .conmentName
   min-height 60px
   line-height 60px
@@ -565,6 +754,33 @@ export default {
 .width90
   width 90%
   float left
+.wi90p_20
+  width calc(90% - 21px)
+  padding-left 20px
+.comment_item
+  float: left;
+  height: 22px;
+  margin: 7px 6px 6px;
+  .item_a
+    border-color: #ffd7dd;
+    position: relative;
+    float: left;
+    border-radius: 2px;
+    line-height: 18px;
+    padding: 1px 10px;
+    background: #fff;
+    box-shadow: 2px 2px 1px #f2f2f2;
+    white-space: nowrap;
+  .good
+    border 1px solid #ffd7dd
+    color: #ff0036;
+  .bad
+    border 1px solid #d3f4e4
+    color: #409280;
+.bgeee
+  background #eeeeee
+  margin-top 0
+  padding 10px 20px
 .titlln
   color: #404040;
   font-size: 12px;
