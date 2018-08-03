@@ -119,14 +119,14 @@
           <template>
             <el-radio-group v-model="commentList.listItem" @change="getItemList(commentList.listItem)">
               <el-radio :label="1">全部</el-radio>
-              <el-radio :label="2">追评(23)</el-radio>
-              <el-radio :label="3">有图(87)</el-radio>
+              <el-radio :label="2">追评({{afterComNum}})</el-radio>
+              <el-radio :label="3">有图({{picComNum}})</el-radio>
             </el-radio-group>
           </template>
         </div>
         <div class="commentList">
           <ul class="conment_ul">
-            <li class="conment_li" v-for="item in commentList.list" :key="item.commentId">
+            <li class="conment_li" v-for="item in commentLists" :key="item.commentId">
               <div class="width60">
                 <div>
                   <div class="conmentFont">{{item.comment}}</div>
@@ -204,8 +204,10 @@ export default {
          ['http://www.lenuse.cn/gas/images/ww.jpg',
          'http://www.lenuse.cn/gas/images/dangao.jpg',
          'http://www.lenuse.cn/gas/images/ee.jpg',
-         'http://www.lenuse.cn/gas/images/rr.jpg',
-         'http://www.lenuse.cn/gas/images/cha.jpg'],
+         'http://www.lenuse.cn/gas/images/rr.jpg'],
+       commentLists:[],
+       afterComNum:0,
+       picComNum:0,
        commentList:{
          proId:13,
          totalNumber:423,
@@ -379,6 +381,7 @@ export default {
     this.hasMemoryList('抹茶味')
     this.hasCpuList('抹茶味','小袋'),
     this.getCommentKeys();
+    this.getCommentList()
   },
   methods:{
     selectYear(item){
@@ -532,6 +535,19 @@ export default {
       })
       this.comKeysTip = comKeyObj
     },
+    getCommentList(){
+      this.afterComNum = 0
+      this.picComNum = 0
+      this.commentLists = this.commentList.list || []
+      this.commentLists.forEach(item =>{
+        if(item.afterCom){
+          this.afterComNum ++
+        }
+        if(item.commentImgList.length>0){
+          this.picComNum ++
+        }
+      })
+    },
     getItemList(item){
       let commentKeys = this.commentList.list || []
       console.log(item)
@@ -555,7 +571,7 @@ export default {
           }
         })
       }
-      this.commentList.list = list
+      this.commentLists = list
 
     }
   }
