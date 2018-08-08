@@ -261,7 +261,7 @@
           })
       },
       productDetail(id){
-        this.$router.push({path: '/ProductDetail', query: { pid:id}})
+        this.$router.push({path: '/productdetail', query: { pid:id}})
       },
       handleScroll () {
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
@@ -303,6 +303,7 @@
   }
   .image {
     width: 100%;
+    height 300px
     display: block;
   }
 
